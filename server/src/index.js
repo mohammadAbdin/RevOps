@@ -8,6 +8,7 @@ import bodyParser from "body-parser";
 import cookieParser from "cookie-parser"; // Import cookie-parser
 
 import authRoutes from "./routes/authRoutes.js";
+import projectsRoutes from "./routes/projectsRoutes.js";
 import { connectToDatabase, connectDB } from "./utils/mongoUtil.js";
 
 // Initialize dotenv
@@ -28,6 +29,7 @@ app.use(morgan("dev"));
 connectDB();
 // Routes
 app.use("/LogIn", authRoutes);
+app.use("/Project", projectsRoutes);
 
 // Default route
 app.get("/", (req, res) => {
