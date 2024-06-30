@@ -1,0 +1,87 @@
+#root {
+  /* max-width: 1280px; */
+  margin: 0 0;
+  padding: 0px 8rem;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+
+  html,
+  body {
+    font-size: 16px;
+  }
+
+  #root {
+    padding: 0px 0rem;
+  }
+
+  .verticle-menu-container {
+    /* padding: 0px 8rem; */
+
+    margin-left: 0rem !important;
+    /* margin-right: -8rem; */
+    background-color: red;
+    z-index: 10;
+  }
+}
+
+/* @media (max-width: 1024px) {
+
+  #root {
+    padding: 0px 1.5rem;
+  }
+} */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.verticle-menu-container {
+  /* padding: 0px 8rem; */
+
+  margin-left: -8rem;
+  z-index: 10;
+}
+
+@media (max-width: 100px) {
+  .verticle-menu-container {
+    /* margin-left: -8rem; */
+    background-color: red;
+  }
+}
+
+@media (min-width: 1167px) {
+  .meduimL\:block {
+    display: block;
+  }
+
+  .meduimL\:hidden {
+    display: none;
+
+  }
+}
+
+.input-component {
+  width: 20rem;
+}
+
+.home {
+  width: 100%;
+}
+
+.myNavbar {
+  background-color: #34485f;
+  width: 100vw;
+}
+
+@media (max-width: 1280px) {
+
+  .xlmax\:mr-32 {
+    margin-right: 32rem;
+  }
+
+  .xlmax\:mr-0 {
+    margin-right: 0rem;
+  }
+}
