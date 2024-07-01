@@ -6,6 +6,7 @@ const projectSchema = new mongoose.Schema({
   tags: { type: [String], required: true },
   projectStatus: { type: String, required: true },
   userId: { type: String, required: true },
+  commitIndex: { type: Number, required: true },
   // githubUriStructure: { type: String, required: true },
 });
 

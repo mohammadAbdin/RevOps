@@ -1,10 +1,11 @@
 import Project from "../../models/projectModel.js"; // it must be changed
-// import { getGithubUrls } from "../../logic/getGithubUrls.js";
+import { getCommitIndex } from "../../logic/getCommitIndex.js";
 export const addProject = async (req, res) => {
   const { project_title, githubUri, tags, projectStatus, _id } = req.body;
   console.log(tags, projectStatus, _id, project_title);
   // console.log(req.body);
-  // getGithubUrls(githubUri);
+  const commitIndex = await getCommitIndex(githubUri);
+  console.log("commitIndex", commitIndex);
   const userId = _id;
   try {
     const newProject = new Project({
@@ -13,10 +14,10 @@ export const addProject = async (req, res) => {
       tags,
       projectStatus,
       userId,
+      commitIndex,
     });
 
     await newProject.save();
-
     res
       .status(201)
       .json({ message: "User created successfully", myres: newProject });

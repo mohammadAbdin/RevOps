@@ -18,7 +18,7 @@ export const getGithubUrls = async (url, path) => {
 
   const [, owner, repo] = match;
   const apiURL = `https://api.github.com/repos/${owner}/${repo}/commits`;
-  // console.log("match:", match);
+  console.log("match:", match);
   // if (path == undefined) path = "";
   // const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
 
@@ -27,8 +27,9 @@ export const getGithubUrls = async (url, path) => {
   // console.log("apiUrl");
 
   const data = await response.json();
-  const commitIndex = 3;
-  console.log(data[data.length - commitIndex]);
-  console.log(commitIndex);
-  console.log(data);
+  // const commitIndex = 3;
+  // console.log(data[data.length - commitIndex]);
+  // console.log(commitIndex);
+  // console.log(data);
+  return data.length;
 };
