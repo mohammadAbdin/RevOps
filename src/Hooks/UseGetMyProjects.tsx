@@ -1,19 +1,29 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { getUserProjectsRequest } from "../API/getUserProjectsRequest";
+import UserType from "../Types/UserType";
+import ProjectType from "../Types/ProjectType";
 
-interface UseGetTokensReturn {
-  tokens: number;
-  setTokens: (tokens: number) => void;
+interface UseGetUserProjectsReturn {
+  getUserProjects: (user: UserType) => void;
+  userProjects: ProjectType[] | null;
 }
 
-const useGetUserProjects = (): UseGetTokensReturn => {
-  const [tokens, setTokens] = useState<number>(0);
+const useGetUserProjects = (): UseGetUserProjectsReturn => {
+  const [userProjects, setUserProjects] = useState<ProjectType[] | null>(null);
 
-  useEffect(() => {}, []);
-  //declare functions here
+  const getUserProjects = async (user: UserType) => {
+    try {
+      const response: ProjectType[] | null = await getUserProjectsRequest(user);
+      setUserProjects(response);
+    } catch (error) {
+      console.error("Error fetching user projects:", error);
+      setUserProjects(null);
+    }
+  };
+
   return {
-    //export functions here
-    tokens,
-    setTokens,
+    getUserProjects,
+    userProjects,
   };
 };
 

@@ -19,7 +19,14 @@ const Navbar: React.FC = () => {
   }, [isLoading, user]);
 
   if (isLoading) {
-    return <div>Loading...</div>; // Show a loading state while waiting
+    return (
+      <div
+        className="spinner inline-block h-8 w-8 animate-spin rounded-full border-4 border-t-4 border-red-200 border-t-black"
+        role="status"
+      >
+        <span className="sr-only">Loading...</span>
+      </div>
+    ); // Show a loading state while waiting
   }
 
   // useEffect(() => {}, [user]);

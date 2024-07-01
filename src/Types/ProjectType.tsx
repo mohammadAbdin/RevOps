@@ -5,13 +5,8 @@ export default interface ProjectType {
   tags: string[];
   projectStatus: string;
   _id: string | undefined;
+  userId?: string;
+  commitIndex?: number;
+  date?: Date;
+  __v?: number;
 }
-
-// interface ProjectType {
-//   _id: string;
-//   project_title: string;
-//   githubUri: string;
-//   description: string;
-//   tags: string;
-//   projectStatus: boolean;
-// }
