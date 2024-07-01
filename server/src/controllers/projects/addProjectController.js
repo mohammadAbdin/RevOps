@@ -1,8 +1,9 @@
 import Project from "../../models/projectModel.js"; // it must be changed
 import { getCommitIndex } from "../../logic/getCommitIndex.js";
 export const addProject = async (req, res) => {
-  const { project_title, githubUri, tags, projectStatus, _id } = req.body;
-  console.log(tags, projectStatus, _id, project_title);
+  const { project_title, githubUri, tags, projectStatus, _id, description } =
+    req.body;
+  console.log(req.body);
   // console.log(req.body);
   const commitIndex = await getCommitIndex(githubUri);
   console.log("commitIndex", commitIndex);
@@ -11,6 +12,7 @@ export const addProject = async (req, res) => {
     const newProject = new Project({
       project_title,
       githubUri,
+      description,
       tags,
       projectStatus,
       userId,
