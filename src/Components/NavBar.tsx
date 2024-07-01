@@ -7,8 +7,10 @@ import useGetTokens from "../Hooks/UseGetTokens";
 import useLogin from "../Hooks/UseLogIn";
 const Navbar: React.FC = () => {
   const navigate = useNavigate();
-  const { setIsLogedIn, isLogedIn, setUser, user } = useContext(UserContext);
+  const { setIsLogedIn, setUser, user } = useContext(UserContext);
   const { tokens } = useGetTokens(setIsLogedIn, setUser);
+  console.log(tokens);
+
   const { handleLogout } = useLogin();
   useEffect(() => {}, [user]);
 

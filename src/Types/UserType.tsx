@@ -1,5 +1,7 @@
 export default interface UserType {
-  userId: string;
+  name: string;
+  // userId: string;
+  _id?: string;
   email: string;
   iat: number;
   exp: number;

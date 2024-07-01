@@ -1,13 +1,13 @@
 import { useContext, useEffect } from "react";
 import { UserContext } from "../../Context/UserContext";
-import { useNavigate } from "react-router-dom";
 
 import useGetTokens from "../../Hooks/UseGetTokens";
-import UserType from "../../Types/UserType";
 
 const Home: React.FC = () => {
-  const { setIsLogedIn, isLogedIn, setUser, user } = useContext(UserContext);
+  const { setIsLogedIn, setUser, user } = useContext(UserContext);
   const { tokens } = useGetTokens(setIsLogedIn, setUser);
+  console.log(tokens);
+
   useEffect(() => {
     console.log(user);
   }, [user]);

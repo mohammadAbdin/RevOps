@@ -1,21 +1,33 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFileAlt,
-  faTags,
-  faAlignLeft,
-} from "@fortawesome/free-solid-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import React, { useEffect, useContext } from "react";
+// import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../Context/UserContext";
 import useProjects from "../../Hooks/UseProjects";
+import { FaFileAlt, FaTags, FaAlignLeft } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import useGetTokens from "../../Hooks/UseGetTokens";
 
 const AddProject: React.FC = () => {
-  const { projectData, handleChange, handleSubmit } = useProjects();
+  const { setIsLogedIn, setUser, user } = useContext(UserContext);
+  const { projectData, setProjectData, handleChange, handleSubmit } =
+    useProjects(user);
+  const { tokens } = useGetTokens(setIsLogedIn, setUser);
+  console.log(tokens);
+
+  useEffect(() => {
+    setProjectData((prev) => {
+      return {
+        ...prev,
+        _id: user?._id ?? prev._id,
+      };
+    });
+  }, [user, setProjectData]);
 
   return (
     <div className="w-full home">
-      <div className="p-8 rounded border border-gray-200">
-        <h1 className="font-medium text-3xl">Add Project</h1>
+      <div className="p-8 rounded border border-gray-200 ">
+        <h1 className="font-medium text-3xl">
+          {user ? user.name : "Add Project"}
+        </h1>
         <p className="text-gray-600 mt-6">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos
           dolorem vel cupiditate laudantium dicta.
@@ -39,10 +51,7 @@ const AddProject: React.FC = () => {
                   value={projectData.project_title}
                   onChange={handleChange}
                 />
-                <FontAwesomeIcon
-                  icon={faFileAlt}
-                  className="text-gray-700 text-xl"
-                />
+                <FaFileAlt className="text-gray-700 text-xl" />
               </div>
             </div>
             <div>
@@ -62,10 +71,7 @@ const AddProject: React.FC = () => {
                   value={projectData.githubUri}
                   onChange={handleChange}
                 />
-                <FontAwesomeIcon
-                  icon={faGithub}
-                  className="text-gray-700 text-xl"
-                />
+                <FaGithub className="text-gray-700 text-xl" />
               </div>
             </div>
             <div>
@@ -85,10 +91,7 @@ const AddProject: React.FC = () => {
                   value={projectData.description}
                   onChange={handleChange}
                 />
-                <FontAwesomeIcon
-                  icon={faAlignLeft}
-                  className="text-gray-700 text-xl"
-                />
+                <FaAlignLeft className="text-gray-700 text-xl" />
               </div>
             </div>
             <div>
@@ -108,10 +111,7 @@ const AddProject: React.FC = () => {
                   value={projectData.tags}
                   onChange={handleChange}
                 />
-                <FontAwesomeIcon
-                  icon={faTags}
-                  className="text-gray-700 text-xl"
-                />
+                <FaTags className="text-gray-700 text-xl" />
               </div>
             </div>
           </div>

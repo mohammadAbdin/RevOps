@@ -1,13 +1,16 @@
 import { useState } from "react";
 import ProjectType from "../Types/ProjectType";
 import { addProject } from "../API/addProjectRequest";
+import UserType from "../Types/UserType";
 
-const useProjects = () => {
+const useProjects = (user: UserType | undefined) => {
   const [projectData, setProjectData] = useState<ProjectType>({
     project_title: "",
     githubUri: "",
     description: "",
-    tags: "",
+    tags: [],
+    projectStatus: "pending",
+    _id: "" || user?._id || undefined,
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,13 +21,14 @@ const useProjects = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Project Data:", projectData);
-    const response: Promise<any> = await addProject(projectData);
+    const response: Promise<unknown> = await addProject(projectData);
     console.log("hi");
     console.log(response);
   };
 
   return {
     projectData,
+    setProjectData,
     handleChange,
     handleSubmit,
   };

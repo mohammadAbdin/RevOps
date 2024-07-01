@@ -1,12 +1,12 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { Outlet } from "react-router-dom";
 import { UserContext } from "../Context/UserContext";
 
 const Sidebar: React.FC = () => {
-  const { setIsLogedIn, setUser, user } = useContext(UserContext);
-  useEffect(() => {
-    console.log(user);
-  }, [user]);
+  const { user } = useContext(UserContext);
+  // useEffect(() => {
+  //   console.log(user);
+  // }, [user]);
 
   return (
     <>
