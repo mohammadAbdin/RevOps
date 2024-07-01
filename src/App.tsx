@@ -11,6 +11,7 @@ import LogIn from "./Pages/LogIn/LogIn";
 // import { UserProvider } from "./Context/UserContext";
 import Register from "./Pages/LogIn/Register";
 import AddProject from "./Pages/AddProject/AddProject";
+import MyProjects from "./Pages/MyProjects/MyProjects";
 
 const AppLayout = () => {
   return (
@@ -51,6 +52,14 @@ const router = createBrowserRouter([
         element: (
           <UserProvider>
             <AddProject />,
+          </UserProvider>
+        ),
+      },
+      {
+        path: "/My-Projects",
+        element: (
+          <UserProvider>
+            <MyProjects />,
           </UserProvider>
         ),
       },

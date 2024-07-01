@@ -8,6 +8,7 @@ const projectSchema = new mongoose.Schema({
   description: { type: String, required: true },
   userId: { type: String, required: true },
   commitIndex: { type: Number, required: true },
+  date: { type: Date, default: Date.now },
   // githubUriStructure: { type: String, required: true },
 });
 

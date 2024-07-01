@@ -8,11 +8,21 @@ import useLogin from "../Hooks/UseLogIn";
 const Navbar: React.FC = () => {
   const navigate = useNavigate();
   const { setIsLogedIn, setUser, user } = useContext(UserContext);
-  const { tokens } = useGetTokens(setIsLogedIn, setUser);
-  console.log(tokens);
-
+  const { isLoading } = useGetTokens(setIsLogedIn, setUser);
   const { handleLogout } = useLogin();
-  useEffect(() => {}, [user]);
+  console.log(user);
+  useEffect(() => {
+    if (!isLoading) {
+      // This will only run once the fetchData is complete
+      console.log("User after fetch:", user);
+    }
+  }, [isLoading, user]);
+
+  if (isLoading) {
+    return <div>Loading...</div>; // Show a loading state while waiting
+  }
+
+  // useEffect(() => {}, [user]);
 
   return (
     <>

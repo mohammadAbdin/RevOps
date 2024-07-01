@@ -63,7 +63,7 @@ const Sidebar: React.FC = () => {
 
                   <li>
                     <a
-                      href="#"
+                      href="/My-Projects"
                       className="w-full whitespace-nowrap block text-left rounded-lg px-4 py-2 text-xs md:text-sm lg:text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700"
                     >
                       My Projects
@@ -147,7 +147,7 @@ const Sidebar: React.FC = () => {
         </div>
       </div>
       ){/* } */}
-      <main className="mt-16">
+      <main className="mt-16 flex-grow home">
         <Outlet /> {/* This will render the matched child route component */}
       </main>
     </>

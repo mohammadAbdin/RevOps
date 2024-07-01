@@ -10,17 +10,32 @@ const AddProject: React.FC = () => {
   const { setIsLogedIn, setUser, user } = useContext(UserContext);
   const { projectData, setProjectData, handleChange, handleSubmit } =
     useProjects(user);
-  const { tokens } = useGetTokens(setIsLogedIn, setUser);
-  console.log(tokens);
-
+  const { isLoading } = useGetTokens(setIsLogedIn, setUser);
+  console.log(user);
   useEffect(() => {
-    setProjectData((prev) => {
-      return {
-        ...prev,
-        _id: user?._id ?? prev._id,
-      };
-    });
-  }, [user, setProjectData]);
+    if (!isLoading) {
+      // This will only run once the fetchData is complete
+      console.log("User after fetch:", user);
+      setProjectData((prev) => {
+        return {
+          ...prev,
+          _id: user?._id ?? prev._id,
+        };
+      });
+    }
+  }, [isLoading, user, setProjectData]);
+
+  if (isLoading) {
+    return <div>Loading...</div>; // Show a loading state while waiting
+  }
+  // useEffect(() => {
+  //   setProjectData((prev) => {
+  //     return {
+  //       ...prev,
+  //       _id: user?._id ?? prev._id,
+  //     };
+  //   });
+  // }, [user, setProjectData]);
 
   return (
     <div className="w-full home">
