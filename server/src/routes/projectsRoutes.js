@@ -1,4 +1,3 @@
-// server/src/routes/authRoutes.js
 import express from "express";
 import { addProject } from "../controllers/projects/addProjectController.js";
 import { getProjectsByUserId } from "../controllers/projects/getProjectsByUserIdController.js";

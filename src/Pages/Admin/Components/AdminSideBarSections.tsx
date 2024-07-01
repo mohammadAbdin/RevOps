@@ -1,11 +1,6 @@
 import React from "react";
-// import { UserContext } from "../../../Context/UserContext";
-// import { useNavigate } from "react-router-dom";
 
 const AdminSideBarSections: React.FC = () => {
-  //   const navigate = useNavigate();
-  //   const { isLogedIn } = useContext(UserContext);
-
   return (
     <ul className="mt-6 space-y-1">
       <li>

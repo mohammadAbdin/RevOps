@@ -1,5 +1,4 @@
 import React, { useEffect, useContext } from "react";
-// import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../Context/UserContext";
 import useProjects from "../../Hooks/UseProjects";
 import { FaFileAlt, FaTags, FaAlignLeft } from "react-icons/fa";
@@ -40,7 +39,6 @@ const AddProject: React.FC = () => {
       <div className="p-8 rounded border border-gray-200 ">
         <h1 className="font-medium text-3xl mt-4">
           {user ? user.isAdmin : "Add Project"}
-          {/* {user ? console.log(user) : console.log(user)} */}
         </h1>
         <p className="text-gray-600 mt-6">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos

@@ -1,4 +1,3 @@
-// import decodeBase64 from "./getDecodedString.js";
 export const getCommitIndex = async (url) => {
   const regex = /github\.com\/([^/]+)\/([^/]+)/;
   const match = url.match(regex);

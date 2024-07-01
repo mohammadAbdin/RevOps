@@ -13,17 +13,15 @@ export const logIn = async (
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ email, password, name }),
-      credentials: "include", // Ensure cookies are included
+      credentials: "include",
     });
     console.log(email, password);
 
     if (response.ok) {
-      // console.log(email, password);
       const data = await response.json();
       setIsLogedIn(true);
       return data;
     } else {
-      // console.log(email, password);
       console.log("li");
       const errorData = await response.json();
       console.log(errorData);
