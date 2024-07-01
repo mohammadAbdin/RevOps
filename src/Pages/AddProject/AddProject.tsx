@@ -14,7 +14,6 @@ const AddProject: React.FC = () => {
   console.log(user);
   useEffect(() => {
     if (!isLoading) {
-      // This will only run once the fetchData is complete
       console.log("User after fetch:", user);
       setProjectData((prev) => {
         return {
@@ -33,16 +32,8 @@ const AddProject: React.FC = () => {
       >
         <span className="sr-only">Loading...</span>
       </div>
-    ); // Show a loading state while waiting
+    );
   }
-  // useEffect(() => {
-  //   setProjectData((prev) => {
-  //     return {
-  //       ...prev,
-  //       _id: user?._id ?? prev._id,
-  //     };
-  //   });
-  // }, [user, setProjectData]);
 
   return (
     <div className="w-full home">

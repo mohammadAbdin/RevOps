@@ -24,11 +24,6 @@ export async function connectToDatabase() {
   }
 }
 
-// export function getDb() {
-//   console.log("getDb function");
-//   return db;
-// }
-
 export async function closeDbConnection() {
   await client.close();
   console.log("MongoDB connection closed.");
@@ -47,3 +42,4 @@ export const connectDB = async () => {
 };
 
 export const getDb = () => mongoose.connection.db;
+export { db };

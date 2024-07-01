@@ -1,4 +1,3 @@
-// server/src/controllers/authController.js
 export const logOutUser = (req, res) => {
   res.clearCookie("token", {
     httpOnly: true,

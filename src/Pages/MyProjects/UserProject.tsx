@@ -8,10 +8,9 @@ const UserProject: React.FC<ProjectType> = ({
   description,
   tags,
 }) => {
-  // Function to truncate long descriptions
   const truncateDescription = (text: string, maxLength: number) => {
     if (text.length > maxLength) {
-      return text.substr(0, maxLength) + " ..."; // Truncate text and add ellipsis
+      return text.substr(0, maxLength) + " ...";
     }
     return text;
   };

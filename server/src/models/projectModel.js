@@ -9,7 +9,6 @@ const projectSchema = new mongoose.Schema({
   userId: { type: String, required: true },
   commitIndex: { type: Number, required: true },
   date: { type: Date, default: Date.now },
-  // githubUriStructure: { type: String, required: true },
 });
 
 const Project = mongoose.model("Project", projectSchema);

@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { UserContext } from "../../Context/UserContext";
+import { UserContext } from "../../../Context/UserContext";
 
-import useGetTokens from "../../Hooks/UseGetTokens";
+import useGetTokens from "../../../Hooks/UseGetTokens";
 
 const Home: React.FC = () => {
   const { setIsLogedIn, isLogedIn, setUser, user } = useContext(UserContext);

@@ -1,15 +1,16 @@
 import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/images/logo.png";
-import { UserContext } from "../Context/UserContext";
-import useGetTokens from "../Hooks/UseGetTokens";
-import useLogin from "../Hooks/UseLogIn";
-import UserTitles from "./UserTitles";
+import { UserContext } from "../../../Context/UserContext";
+import useGetTokens from "../../../Hooks/UseGetTokens";
+import useLogin from "../../../Hooks/UseLogIn";
+import AdminTitles from "../AdminHome/AdminTitles";
 const Navbar: React.FC = () => {
   const navigate = useNavigate();
   const { setIsLogedIn, setUser, user } = useContext(UserContext);
   const { isLoading } = useGetTokens(setIsLogedIn, setUser);
   const { handleLogout } = useLogin();
+  console.log(user);
   useEffect(() => {
     if (!isLoading) {
       console.log("User after fetch:", user);
@@ -35,7 +36,7 @@ const Navbar: React.FC = () => {
 
             <div className="md:flex md:items-center md:gap-12">
               <nav aria-label="Global" className=" lg:block text-white">
-                <UserTitles />
+                <AdminTitles />
               </nav>
               <div className="flex items-center gap-4">
                 {user ? (
@@ -52,23 +53,13 @@ const Navbar: React.FC = () => {
                 ) : (
                   <div className="sm:flex sm:gap-4">
                     <button
-                      className="rounded-md bg-teal-600 px-5 py-2.5 hidden lg:block text-sm font-medium text-white shadow"
+                      className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
                       onClick={() => {
                         navigate("/LogIn");
                       }}
                     >
                       Login
                     </button>
-                    <div className="hidden sm:flex">
-                      <button
-                        className="rounded-md bg-gray-100 px-5 py-2.5 hidden lg:block text-sm font-medium text-teal-600"
-                        onClick={() => {
-                          navigate("/Register");
-                        }}
-                      >
-                        Register
-                      </button>
-                    </div>
                   </div>
                 )}
 

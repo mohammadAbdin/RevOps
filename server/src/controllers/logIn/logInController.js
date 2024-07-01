@@ -1,9 +1,6 @@
-// server/src/controllers/authController.js
 import User from "../../models/userModel.js";
-import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken"; // For creating JWT tokens
+import jwt from "jsonwebtoken";
 
-// Secret for JWT (should be in your .env file)
 const JWT_SECRET = process.env.JWT_SECRET || "your_secret_key";
 
 export const LoginUser = async (req, res) => {

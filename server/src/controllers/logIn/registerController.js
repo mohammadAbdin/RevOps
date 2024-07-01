@@ -1,5 +1,4 @@
 import User from "../../models/userModel.js";
-// import { getDb } from "../utils/mongoUtil.js";
 
 export const RegisterUser = async (req, res) => {
   const { email, password, name } = req.body;

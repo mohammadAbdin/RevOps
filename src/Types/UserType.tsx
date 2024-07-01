@@ -5,4 +5,5 @@ export default interface UserType {
   email: string;
   iat: number;
   exp: number;
+  isAdmin?: boolean;
 }

@@ -8,7 +8,6 @@ type UserContextType = {
   setIsAdmin: React.Dispatch<React.SetStateAction<boolean>>;
   user: UserType | undefined;
   setUser: React.Dispatch<React.SetStateAction<UserType | undefined>>;
-  // Add other properties and methods here
 };
 export const UserContext = createContext<UserContextType>({
   isLogedIn: false,
@@ -17,18 +16,20 @@ export const UserContext = createContext<UserContextType>({
   setIsAdmin: () => {},
   user: undefined,
   setUser: () => {},
-  // Add other properties and methods with default values
 });
 interface UserContextProps {
   children: ReactNode;
 }
 
 export const UserProvider: React.FC<UserContextProps> = ({ children }) => {
-  const [isLogedIn, setIsLogedIn] = useState(true);
+  const [isLogedIn, setIsLogedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
-  const [user, setUser] = useState<UserType>();
+  const [user, setUser] = useState<UserType | undefined>();
   useEffect(() => {
     console.log(user);
+    if (user?.isAdmin) {
+      setIsAdmin(true);
+    }
   }, [user]);
   const contextValue: UserContextType = {
     isLogedIn,
@@ -37,7 +38,6 @@ export const UserProvider: React.FC<UserContextProps> = ({ children }) => {
     setIsAdmin,
     user,
     setUser,
-    //export the functions
   };
 
   return (

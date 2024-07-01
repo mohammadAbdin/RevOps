@@ -1,9 +1,7 @@
-import User from "../models/userModel.js"; // Example model import
+import User from "../models/userModel.js";
 
 export const getUserAfterTokens = async (req, res) => {
   try {
-    // Access user information from req.user if authentication succeeds
-    // console.log();
     const user = await User.findById(req.user.userId).select("-password");
     res.status(200).json(user);
   } catch (error) {
