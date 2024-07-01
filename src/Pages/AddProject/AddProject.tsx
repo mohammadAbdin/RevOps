@@ -36,10 +36,11 @@ const AddProject: React.FC = () => {
   }
 
   return (
-    <div className="w-full home">
+    <div className="w-full home mt-8">
       <div className="p-8 rounded border border-gray-200 ">
-        <h1 className="font-medium text-3xl">
-          {user ? user.name : "Add Project"}
+        <h1 className="font-medium text-3xl mt-4">
+          {user ? user.isAdmin : "Add Project"}
+          {/* {user ? console.log(user) : console.log(user)} */}
         </h1>
         <p className="text-gray-600 mt-6">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos

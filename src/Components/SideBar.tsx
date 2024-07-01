@@ -38,8 +38,14 @@ const Sidebar: React.FC = () => {
             />
 
             <div>
-              <p className="text-xs ">
+              {/* <p className="text-xs">
                 <strong className="block  font-medium">
+                  {user ? user.name : "user not found"}
+                </strong>
+                <span>{user ? user.email : ""}</span>
+              </p> */}
+              <p className="text-xs max-w-32rem border">
+                <strong className="block font-medium">
                   {user ? user.name : "user not found"}
                 </strong>
                 <span>{user ? user.email : ""}</span>

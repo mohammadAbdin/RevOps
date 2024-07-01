@@ -1,5 +1,4 @@
 import React, { createContext, ReactNode, useEffect, useState } from "react";
-// import { useNavigate } from "react-router-dom";
 import UserType from "../Types/UserType";
 type UserContextType = {
   isLogedIn: boolean;
