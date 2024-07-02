@@ -11,9 +11,7 @@ export const getGithubFoldersAndFiles = async (githubUri, commitIndex) => {
   //   const token = process.env.ACCOUNTS_TOKEN;
   //   console.log(token);
   //   const commitsResponse = await fetch(commitsUrl, {
-  //     headers: {
-  //       Authorization: `Bearer ${token}0lS9ho`,
-  //     },
+  //
   //   });
   //   const commitsData = await commitsResponse.json();
   //   console.log(commitsData, "commitsData[commit]");
