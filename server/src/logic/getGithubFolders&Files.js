@@ -1,57 +1,34 @@
 export const getGithubFoldersAndFiles = async (githubUri, commitIndex) => {
-  const regex = /github\.com\/([^/]+)\/([^/]+)/;
-  const match = githubUri.match(regex);
-
-  if (!match) {
-    return "Invalid GitHub repository URL";
-  }
-
-  const [, owner, repo] = match;
-  console.log(match);
-  const commitsUrl = `https://api.github.com/repos/${owner}/${repo}/commits`;
-
-  try {
-    // Fetch the commits
-    // const token = process.env.GITHUB_TOKEN;
-    const token = "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";
-    console.log(token);
-
-    // Fetch the commits with authentication
-    const commitsResponse = await fetch(commitsUrl, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    // const commitsResponse = await fetch(commitsUrl);
-    const commitsData = await commitsResponse.json();
-    console.log(commitsData, "commitsData[commit]");
-    // console.log(data[data.length - commitIndex]);
-    const commit = commitsData.length - commitIndex;
-    // Ensure commitIndex is within bounds
-    // if (commitIndex < 0 || commitIndex >= commitsData.length) {
-    //   throw new Error("Invalid commit index");
-    // }
-
-    // Get the SHA of the commit at commitIndex
-    const commitSha = commitsData[commit].sha;
-    const treeUrl = `https://api.github.com/repos/${owner}/${repo}/git/trees/${commitSha}`;
-
-    // Fetch the tree (recursive to get all files and folders)
-    const treeResponse = await fetch(treeUrl);
-    const treeData = await treeResponse.json();
-    console.log(treeData, "treeData");
-    // Extract folders and files from the tree
-    const foldersAndFiles = treeData.tree;
-    // .map((item) => ({
-    //   item: item,
-    // }));
-    // console.log(foldersAndFiles);
-    return foldersAndFiles;
-    // return foldersAndFiles;
-  } catch (error) {
-    console.error("Error fetching folders and files:", error);
-    return null;
-  }
+  // const regex = /github\.com\/([^/]+)\/([^/]+)/;
+  // const match = githubUri.match(regex);
+  // if (!match) {
+  //   return "Invalid GitHub repository URL";
+  // }
+  // const [, owner, repo] = match;
+  // console.log(match);
+  // const commitsUrl = `https://api.github.com/repos/${owner}/${repo}/commits`;
+  // try {
+  //   const token = process.env.ACCOUNTS_TOKEN;
+  //   console.log(token);
+  //   const commitsResponse = await fetch(commitsUrl, {
+  //     headers: {
+  //       Authorization: `Bearer ${token}0lS9ho`,
+  //     },
+  //   });
+  //   const commitsData = await commitsResponse.json();
+  //   console.log(commitsData, "commitsData[commit]");
+  //   const commit = commitsData.length - commitIndex;
+  //   const commitSha = commitsData[commit].sha;
+  //   const treeUrl = `https://api.github.com/repos/${owner}/${repo}/git/trees/${commitSha}`;
+  //   const treeResponse = await fetch(treeUrl);
+  //   const treeData = await treeResponse.json();
+  //   console.log(treeData, "treeData");
+  //   const foldersAndFiles = treeData.tree;
+  //   return foldersAndFiles;
+  // } catch (error) {
+  //   console.error("Error fetching folders and files:", error);
+  //   return null;
+  // }
 };
 
 // {
