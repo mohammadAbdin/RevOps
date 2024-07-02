@@ -11,6 +11,7 @@ import ProjectsToDo from "./Pages/Admin/ProjectsToDo/ProjectsToDo";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import ReviewProject from "./Pages/Admin/ReviewProject";
 import ReviewProjectInternalFolders from "./Pages/Admin/ReviewProjectInternalFolders";
+import DisplayFile from "./Pages/Admin/displayFile/DisplayFile";
 
 const AppLayout = () => {
   return (
@@ -89,6 +90,16 @@ const router = createBrowserRouter([
           // <UserProvider>
           // <ProtectedRoute adminOnly>
           <ReviewProjectInternalFolders />
+          // </ProtectedRoute>
+          // {/* </UserProvider> */}
+        ),
+      },
+      {
+        path: "/file/content/:encodedUrl",
+        element: (
+          // <UserProvider>
+          // <ProtectedRoute adminOnly>
+          <DisplayFile />
           // </ProtectedRoute>
           // {/* </UserProvider> */}
         ),

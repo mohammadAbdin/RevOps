@@ -5,13 +5,15 @@ interface UseReviewProjectsForAdminReturn {
   getGitHubProjectInternalForReviewing: (
     projectId: string | undefined,
     url: string
-  ) => Promise<3 | undefined>;
+  ) => Promise<GitHubProjectResponse | undefined>;
   gitHubProjectInternalForReviewing: GitHubProjectResponse | null;
 }
 
 const useReviewProjectsForAdmin = (): UseReviewProjectsForAdminReturn => {
-  const [gitHubProjectInternalForReviewing, GitHubProjectInternalForReviewing] =
-    useState<GitHubProjectResponse | null>(null);
+  const [
+    gitHubProjectInternalForReviewing,
+    setGitHubProjectInternalForReviewing,
+  ] = useState<GitHubProjectResponse | null>(null);
 
   const getGitHubProjectInternalForReviewing = async (
     projectId?: string,
@@ -20,13 +22,13 @@ const useReviewProjectsForAdmin = (): UseReviewProjectsForAdminReturn => {
     try {
       const response: GitHubProjectResponse | null =
         await getGitHubProjectInternalForReviewingRequest(projectId, url);
-      GitHubProjectInternalForReviewing(response);
+      setGitHubProjectInternalForReviewing(response);
       return;
     } catch (error) {
       console.error("Error fetching projects to do:", error);
-      GitHubProjectInternalForReviewing(null);
+      setGitHubProjectInternalForReviewing(null);
     }
-    return 3;
+    return undefined;
   };
 
   return {

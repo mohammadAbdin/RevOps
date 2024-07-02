@@ -1,7 +1,7 @@
 import React from "react";
 import { FaFolder, FaFileAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 interface Item {
   type: "tree" | "blob";
   path: string;
@@ -15,6 +15,7 @@ const FoldersAndFilesStructure: React.FC<{
 }> = ({ staticData, projectId, project_title }) => {
   // const location = useLocation();
   const randomNumber = Math.floor(Math.random() * 200) + 1;
+  const navigate = useNavigate();
 
   return (
     <table className="min-w-full divide-y divide-gray-200 border border-gray-200 bg-white">
@@ -35,7 +36,7 @@ const FoldersAndFilesStructure: React.FC<{
         </tr>
       </thead>
       <tbody className="bg-white divide-y divide-gray-200">
-        <tr className="hover:bg-gray-50">
+        {/* <tr className="hover:bg-gray-50">
           <td
             className="px-6 py-4 whitespace-nowrap flex items-center"
             colSpan={2}
@@ -81,7 +82,7 @@ const FoldersAndFilesStructure: React.FC<{
           </td>
           <td className="px-6 py-4 whitespace-nowrap"></td>
           <td className="px-6 py-4 whitespace-nowrap"></td>
-        </tr>
+        </tr> */}
         {staticData.map((item, index) => {
           return (
             <tr key={index} className="hover:bg-gray-50">
@@ -103,19 +104,26 @@ const FoldersAndFilesStructure: React.FC<{
                     <FaFolder
                       className="text-yellow-500 mr-2 cursor-pointer"
                       onClick={() => {
-                        setTimeout(() => {
-                          window.location.reload();
-                        }, 1000);
+                        if (item.type === "tree")
+                          setTimeout(() => {
+                            window.location.reload();
+                          }, 1000);
                       }}
                     />
                   </Link>
                 ) : (
-                  <FaFileAlt className="text-blue-500 mr-2" />
+                  <FaFileAlt
+                    onClick={() => {
+                      const encodedUrl = encodeURIComponent(item.url);
+
+                      navigate(`/file/content/${encodedUrl}`);
+                    }}
+                    className="text-blue-500 mr-2"
+                  />
                 )}
                 <button
                   onClick={() => {
-                    console.log("hi");
-                    window.location.reload();
+                    if (item.type === "tree") window.location.reload();
                   }}
                   className="text-blue-600 hover:underline"
                   title={item.path}
