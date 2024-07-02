@@ -28,7 +28,6 @@ const fetchData = async (
 
       if (response.ok) {
         const data = await response.json();
-        console.log("tokens: ", data);
 
         setIsLogedIn(true);
         setUser(data);

@@ -8,7 +8,6 @@ import AdminSideBarSections from "../Pages/Admin/Components/AdminSideBarSections
 
 const Sidebar: React.FC = () => {
   const { user, isAdmin, setIsLogedIn, setUser } = useContext(UserContext);
-  console.log(isAdmin);
   const { isLoading } = useGetTokens(setIsLogedIn, setUser);
   useEffect(() => {
     if (!isLoading) {

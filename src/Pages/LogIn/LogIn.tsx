@@ -5,7 +5,6 @@ import logo from "../../assets/images/logo.png";
 const LogIn: React.FC = () => {
   const { email, password, setEmail, setPassword, handlelogIn, error } =
     useLogin();
-  console.log(error);
   useEffect(() => {
     console.log("Error: " + error);
   }, [error]);

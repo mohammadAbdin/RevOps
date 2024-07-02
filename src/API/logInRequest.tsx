@@ -15,14 +15,12 @@ export const logIn = async (
       body: JSON.stringify({ email, password, name }),
       credentials: "include",
     });
-    console.log(email, password);
 
     if (response.ok) {
       const data = await response.json();
       setIsLogedIn(true);
       return data;
     } else {
-      console.log("li");
       const errorData = await response.json();
       console.log(errorData);
 

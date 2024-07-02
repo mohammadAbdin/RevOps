@@ -30,9 +30,7 @@ const useLogin = (): UseLoginReturn => {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [error, setError] = useState<string | null>(null);
-  const { setIsLogedIn, setUser, setIsAdmin, isAdmin } =
-    useContext(UserContext);
-  console.log(isAdmin, setIsAdmin);
+  const { setIsLogedIn, setUser } = useContext(UserContext);
 
   const [passwordConfirmation, setPasswordConfirmation] = useState<string>("");
   const [passwordError, setPasswordError] = useState<string | null>("");
@@ -41,7 +39,6 @@ const useLogin = (): UseLoginReturn => {
     event.preventDefault();
     setError(null);
     setPasswordError("");
-    console.log(name);
 
     if (password !== passwordConfirmation) {
       setPasswordError("Please confirm your password.");
@@ -70,10 +67,7 @@ const useLogin = (): UseLoginReturn => {
       "/LogIn/auth"
     );
     setUser(response.user);
-    console.log(response);
     if (response.token) {
-      console.log("hi");
-      console.log(response.token);
       Cookies.set("token", response.token);
     }
 

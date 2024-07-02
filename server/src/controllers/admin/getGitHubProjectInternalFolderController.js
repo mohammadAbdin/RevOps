@@ -1,10 +1,8 @@
 import { getGithubInsideFoldersAndFiles } from "../../logic/getGithubInsideFoldersAndFiles.js";
 export const getGitHubProjectInternalFolder = async (req, res) => {
-  console.log("hi");
   const { url } = req.params;
   const decodedUrl = decodeURIComponent(url);
 
-  console.log("url", decodedUrl);
   try {
     const foldersAndFiles = await getGithubInsideFoldersAndFiles(decodedUrl);
 

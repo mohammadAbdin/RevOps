@@ -16,7 +16,6 @@ export const getAllProjectsRequest = async (): Promise<
 
     if (response.ok) {
       const projects: ProjectType[] = await response.json();
-      console.log(projects);
 
       return projects;
     } else {

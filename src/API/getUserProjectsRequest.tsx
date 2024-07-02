@@ -5,7 +5,6 @@ export const getUserProjectsRequest = async (
   user: UserType
 ): Promise<ProjectType[] | null> => {
   const id = user._id;
-  console.log(id);
 
   try {
     const response: Response = await fetch(
@@ -20,7 +19,6 @@ export const getUserProjectsRequest = async (
 
     if (response.ok) {
       const projects: ProjectType[] = await response.json();
-      console.log(projects);
 
       return projects;
     } else {

@@ -9,11 +9,9 @@ const MyProjects: React.FC = () => {
   const { setIsLogedIn, setUser, user, isAdmin } = useContext(UserContext);
   const { isLoading } = useGetTokens(setIsLogedIn, setUser);
   const { getUserProjects, userProjects } = useGetUserProjects();
-  console.log(userProjects);
 
   useEffect(() => {
     if (!isLoading && user && !userProjects) {
-      console.log("User after fetch:", user);
       getUserProjects(user);
     }
   }, [isLoading, user, getUserProjects, userProjects]);

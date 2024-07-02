@@ -7,17 +7,13 @@ import Divider from "../../../Components/Divider";
 
 const ProjectsToDo: React.FC = () => {
   const { setIsLogedIn, setUser, isAdmin } = useContext(UserContext);
-  console.log(isAdmin);
 
   const { isLoading } = useGetTokens(setIsLogedIn, setUser);
   const { getProjectsToDo, projectsToDo } = useGetProjectsToDo();
-  console.log(projectsToDo);
 
   useEffect(() => {
     if (!isLoading && !projectsToDo) {
-      console.log("User after fetch:");
       getProjectsToDo();
-      console.log(projectsToDo);
     }
   }, [isLoading, getProjectsToDo, projectsToDo]);
 

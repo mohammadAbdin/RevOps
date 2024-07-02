@@ -10,10 +10,9 @@ const Navbar: React.FC = () => {
   const { setIsLogedIn, setUser, user } = useContext(UserContext);
   const { isLoading } = useGetTokens(setIsLogedIn, setUser);
   const { handleLogout } = useLogin();
-  console.log(user);
   useEffect(() => {
     if (!isLoading) {
-      console.log("User after fetch:", user);
+      console.log(isLoading);
     }
   }, [isLoading, user]);
 

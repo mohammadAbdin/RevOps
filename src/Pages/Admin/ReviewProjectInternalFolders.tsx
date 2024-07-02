@@ -10,21 +10,27 @@ const ReviewProjectInternalFolders: React.FC = () => {
   const { randomNum } = useParams();
   console.log(randomNum);
 
+  const onBackButtonEvent = (e: BeforeUnloadEvent) => {
+    e.preventDefault();
+    window.location.reload();
+  };
+  useEffect(() => {
+    window.addEventListener("popstate", onBackButtonEvent);
+    return () => {
+      window.removeEventListener("popstate", onBackButtonEvent);
+    };
+  }, []);
   const location = useLocation();
   const { url, projectId, project_title } = location.state || {};
-  console.log(url, projectId);
   const { setIsLogedIn, setUser } = useContext(UserContext);
   const { isLoading } = useGetTokens(setIsLogedIn, setUser);
   const {
     getGitHubProjectInternalForReviewing,
     gitHubProjectInternalForReviewing,
   } = UseReviewInternalProjectForAdmin();
-  console.log(projectId);
   useEffect(() => {
     if (!isLoading && !gitHubProjectInternalForReviewing) {
-      console.log("github after fetch:");
       getGitHubProjectInternalForReviewing(projectId, url);
-      console.log(gitHubProjectInternalForReviewing);
     }
   }, [
     isLoading,

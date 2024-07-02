@@ -15,7 +15,6 @@ const FoldersAndFilesStructure: React.FC<{
 }> = ({ staticData, projectId, project_title }) => {
   // const location = useLocation();
   const randomNumber = Math.floor(Math.random() * 200) + 1;
-  console.log(staticData);
 
   return (
     <table className="min-w-full divide-y divide-gray-200 border border-gray-200 bg-white">
@@ -36,9 +35,54 @@ const FoldersAndFilesStructure: React.FC<{
         </tr>
       </thead>
       <tbody className="bg-white divide-y divide-gray-200">
+        <tr className="hover:bg-gray-50">
+          <td
+            className="px-6 py-4 whitespace-nowrap flex items-center"
+            colSpan={2}
+          >
+            {" "}
+            <Link
+              state={
+                {
+                  // url: item.url,
+                  // projectId: projectId,
+                  // project_title: project_title,
+                }
+              }
+              to={{
+                pathname: `/Projects-to-do/ReviewProject/internal/${randomNumber}`,
+              }}
+            >
+              <FaFolder
+                className="text-yellow-500 mr-2 cursor-pointer"
+                onClick={() => {
+                  // setTimeout(() => {
+                  //   window.location.reload();
+                  // }, 1000);
+                }}
+              />
+            </Link>
+            <button
+              onClick={() => {
+                // console.log("hi");
+                // window.location.reload();
+              }}
+              className="text-blue-600 text-left hover:underline"
+            >
+              <Link
+                // state={{ url: item.url, projectId: projectId }}
+                to={{
+                  pathname: `/Projects-to-do/ReviewProject/internal/${randomNumber}`,
+                }}
+              >
+                . . .
+              </Link>
+            </button>
+          </td>
+          <td className="px-6 py-4 whitespace-nowrap"></td>
+          <td className="px-6 py-4 whitespace-nowrap"></td>
+        </tr>
         {staticData.map((item, index) => {
-          console.log("item", item);
-
           return (
             <tr key={index} className="hover:bg-gray-50">
               <td

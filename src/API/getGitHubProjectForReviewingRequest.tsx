@@ -13,11 +13,9 @@ export const getGitHubProjectForReviewingRequest = async (
         },
       }
     );
-    console.log("projectId", projectId);
 
     if (response.ok) {
       const result: GitHubProjectResponse = await response.json();
-      console.log(result);
 
       return result;
     } else {

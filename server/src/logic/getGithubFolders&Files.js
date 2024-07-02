@@ -12,12 +12,14 @@ export const getGithubFoldersAndFiles = async (githubUri, commitIndex) => {
 
   try {
     // Fetch the commits
-    const token = process.env.GITHUB_TOKEN;
+    // const token = process.env.GITHUB_TOKEN;
+    const token = "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";
+    console.log(token);
 
     // Fetch the commits with authentication
     const commitsResponse = await fetch(commitsUrl, {
       headers: {
-        Authorization: `Bearer ${token}`, // Use `Bearer` for tokens created after August 2021
+        Authorization: `Bearer ${token}`,
       },
     });
     // const commitsResponse = await fetch(commitsUrl);

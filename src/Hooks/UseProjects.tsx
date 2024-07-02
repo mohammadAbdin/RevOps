@@ -20,9 +20,7 @@ const useProjects = (user: UserType | undefined) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Project Data:", projectData);
     const response: Promise<unknown> = await addProject(projectData);
-    console.log("hi");
     console.log(response);
   };
 

@@ -25,7 +25,6 @@ export const UserProvider: React.FC<UserContextProps> = ({ children }) => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [user, setUser] = useState<UserType | undefined>();
   useEffect(() => {
-    console.log(user);
     if (user?.isAdmin) {
       setIsAdmin(true);
     }

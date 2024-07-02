@@ -3,9 +3,7 @@ import { getCommitIndex } from "../../logic/getCommitIndex.js";
 export const addProject = async (req, res) => {
   const { project_title, githubUri, tags, projectStatus, _id, description } =
     req.body;
-  console.log(req.body);
   const commitIndex = await getCommitIndex(githubUri);
-  console.log("commitIndex", commitIndex);
   const userId = _id;
   try {
     const newProject = new Project({

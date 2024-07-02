@@ -8,18 +8,14 @@ import { useParams } from "react-router-dom";
 
 const ReviewProject: React.FC = () => {
   const { projectId } = useParams<{ projectId: string | undefined }>();
-  console.log("projectId", projectId);
 
   const { setIsLogedIn, setUser } = useContext(UserContext);
   const { isLoading } = useGetTokens(setIsLogedIn, setUser);
   const { getGitHubProjectForReviewing, gitHubProjectForReviewing } =
     useReviewProjectsForAdmin();
-  console.log(projectId);
   useEffect(() => {
     if (!isLoading && !gitHubProjectForReviewing) {
-      console.log("github after fetch:");
       getGitHubProjectForReviewing(projectId);
-      console.log("gitHubProjectForReviewing", gitHubProjectForReviewing);
     }
   }, [
     isLoading,
