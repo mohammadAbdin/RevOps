@@ -6,7 +6,7 @@ import useGetTokens from "../../Hooks/UseGetTokens";
 import Divider from "../../Components/Divider";
 
 const MyProjects: React.FC = () => {
-  const { setIsLogedIn, setUser, user } = useContext(UserContext);
+  const { setIsLogedIn, setUser, user, isAdmin } = useContext(UserContext);
   const { isLoading } = useGetTokens(setIsLogedIn, setUser);
   const { getUserProjects, userProjects } = useGetUserProjects();
   console.log(userProjects);
@@ -32,9 +32,9 @@ const MyProjects: React.FC = () => {
   return (
     <div className="flex-grow flex flex-col gap-0 home">
       <Divider text="My Projects" />
-      <div className="mb-16"></div>
+      <div className="mb-8 lg:mb-16"></div>
       {userProjects.map((project, index) => (
-        <UserProject key={index} {...project} />
+        <UserProject key={index} {...project} isAdmin={isAdmin} />
       ))}
     </div>
   );

@@ -8,6 +8,7 @@ import cookieParser from "cookie-parser";
 
 import authRoutes from "./routes/authRoutes.js";
 import projectsRoutes from "./routes/projectsRoutes.js";
+import adimnRoutes from "./routes/adminRoutes.js";
 import { connectDB } from "./utils/mongoUtil.js";
 
 const app = express();
@@ -37,6 +38,7 @@ connectDB();
 
 app.use("/LogIn", authRoutes);
 app.use("/Project", projectsRoutes);
+app.use("/Admin", adimnRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

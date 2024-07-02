@@ -9,6 +9,8 @@ import AddProject from "./Pages/AddProject/AddProject";
 import MyProjects from "./Pages/MyProjects/MyProjects";
 import ProjectsToDo from "./Pages/Admin/ProjectsToDo/ProjectsToDo";
 import ProtectedRoute from "./Components/ProtectedRoute";
+import ReviewProject from "./Pages/Admin/ReviewProject";
+import ReviewProjectInternalFolders from "./Pages/Admin/ReviewProjectInternalFolders";
 
 const AppLayout = () => {
   return (
@@ -68,6 +70,26 @@ const router = createBrowserRouter([
           <ProtectedRoute adminOnly>
             <ProjectsToDo />
           </ProtectedRoute>
+          // {/* </UserProvider> */}
+        ),
+      },
+      {
+        path: "/Projects-to-do/ReviewProject/:projectId",
+        element: (
+          // <UserProvider>
+          <ProtectedRoute adminOnly>
+            <ReviewProject />
+          </ProtectedRoute>
+          // {/* </UserProvider> */}
+        ),
+      },
+      {
+        path: "/Projects-to-do/ReviewProject/internal/:randomNum",
+        element: (
+          // <UserProvider>
+          // <ProtectedRoute adminOnly>
+          <ReviewProjectInternalFolders />
+          // </ProtectedRoute>
           // {/* </UserProvider> */}
         ),
       },

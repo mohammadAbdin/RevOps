@@ -6,7 +6,9 @@ import useGetTokens from "../../../Hooks/UseGetTokens";
 import Divider from "../../../Components/Divider";
 
 const ProjectsToDo: React.FC = () => {
-  const { setIsLogedIn, setUser } = useContext(UserContext);
+  const { setIsLogedIn, setUser, isAdmin } = useContext(UserContext);
+  console.log(isAdmin);
+
   const { isLoading } = useGetTokens(setIsLogedIn, setUser);
   const { getProjectsToDo, projectsToDo } = useGetProjectsToDo();
   console.log(projectsToDo);
@@ -15,6 +17,7 @@ const ProjectsToDo: React.FC = () => {
     if (!isLoading && !projectsToDo) {
       console.log("User after fetch:");
       getProjectsToDo();
+      console.log(projectsToDo);
     }
   }, [isLoading, getProjectsToDo, projectsToDo]);
 
@@ -32,9 +35,9 @@ const ProjectsToDo: React.FC = () => {
   return (
     <div className="flex-grow flex flex-col gap-0 home">
       <Divider text="My Projects" />
-      <div className="mb-16"></div>
+      <div className="mb-8 lg:mb-16"></div>
       {projectsToDo.map((project, index) => (
-        <UserProject key={index} {...project} />
+        <UserProject key={index} {...project} isAdmin={isAdmin} />
       ))}
     </div>
   );
