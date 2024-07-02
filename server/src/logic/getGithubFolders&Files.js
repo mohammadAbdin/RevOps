@@ -19,7 +19,7 @@ export const getGithubFoldersAndFiles = async (githubUri, commitIndex) => {
     // Fetch the commits with authentication
     const commitsResponse = await fetch(commitsUrl, {
       headers: {
-        Authorization: `Bearer ${token}0lS9ho`,
+        Authorization: `Bearer ${token}`,
       },
     });
     // const commitsResponse = await fetch(commitsUrl);
