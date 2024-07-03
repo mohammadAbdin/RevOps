@@ -12,7 +12,6 @@ const useGetFileContent = (): UseReviewProjectsForAdminReturn => {
     try {
       const response: string | null = await getFileContentRequest(url);
       console.log("getFileContentRequest", response);
-
       setFileContent(response);
       return;
     } catch (error) {

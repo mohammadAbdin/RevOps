@@ -54,6 +54,7 @@
 @media (min-width: 1167px) {
   .meduimL\:block {
     display: block;
+    /* width: ; */
   }
 
   .meduimL\:hidden {

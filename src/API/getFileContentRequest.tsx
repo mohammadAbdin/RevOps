@@ -2,10 +2,11 @@ export const getFileContentRequest = async (
   url: string | undefined
 ): Promise<string | null> => {
   try {
-    console.log(url);
+    let encodedUrl: string = "";
+    if (url != undefined) encodedUrl = encodeURIComponent(url);
 
     const response: Response = await fetch(
-      `http://localhost:5000/file/content/${url}`,
+      `http://localhost:5000/file/content/${encodedUrl}`,
       {
         method: "GET",
         headers: {
