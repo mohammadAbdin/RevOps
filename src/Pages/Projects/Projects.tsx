@@ -4,6 +4,7 @@ import UserProject from "../MyProjects/UserProject";
 import useGetAllProjects from "../../Hooks/UseGetAllProjects";
 import useGetTokens from "../../Hooks/UseGetTokens";
 import Divider from "../../Components/Divider";
+// import { CSSTransition } from "react-transition-group";
 
 const Projects: React.FC = () => {
   const { setIsLogedIn, setUser, isAdmin } = useContext(UserContext);
@@ -29,8 +30,9 @@ const Projects: React.FC = () => {
 
   return (
     <div className="flex-grow flex flex-col gap-0 home">
-      <Divider text="My Projects" />
+      <Divider text="" />
       <div className="mb-8 lg:mb-16"></div>
+
       {allProjects.map((project, index) => (
         <UserProject key={index} {...project} isAdmin={isAdmin} />
       ))}

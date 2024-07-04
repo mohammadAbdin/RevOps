@@ -78,9 +78,9 @@ const router = createBrowserRouter([
         path: "/Projects-to-do/ReviewProject/:projectId",
         element: (
           // <UserProvider>
-          <ProtectedRoute adminOnly>
-            <ReviewProject />
-          </ProtectedRoute>
+          // <ProtectedRoute adminOnly>
+          <ReviewProject />
+          // </ProtectedRoute>
           // {/* </UserProvider> */}
         ),
       },

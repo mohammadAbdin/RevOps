@@ -28,7 +28,7 @@ const Sidebar: React.FC = () => {
         <div className="sticky inset-x-0 bottom-0 mr-12 border-t  border-gray-100">
           <a
             href="#"
-            className="flex mr-12 items-start gap-2 bg-white pb-4 hover:bg-gray-50"
+            className="flex mr-12 items-start  gap-2 bg-white pb-4 hover:bg-gray-50"
           >
             <img
               alt="User avatar"
@@ -37,17 +37,13 @@ const Sidebar: React.FC = () => {
             />
 
             <div>
-              {/* <p className="text-xs">
-                <strong className="block  font-medium">
+              <p className="text-xs w-20 relative ">
+                <strong className="block font-medium text-wrap">
                   {user ? user.name : "user not found"}
                 </strong>
-                <span>{user ? user.email : ""}</span>
-              </p> */}
-              <p className="text-xs max-w-32rem border">
-                <strong className="block font-medium">
-                  {user ? user.name : "user not found"}
-                </strong>
-                <span>{user ? user.email : ""}</span>
+                <span className="block text-wrap w-20 h-full">
+                  {user ? user.email : ""}
+                </span>
               </p>
             </div>
           </a>

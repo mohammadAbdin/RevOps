@@ -5,13 +5,15 @@ import useAdminReview from "../../../Hooks/UseAdminReview";
 import useGetTokens from "../../../Hooks/UseGetTokens";
 import Divider from "../../../Components/Divider";
 // import { FeedBackType } from "../../../Types/FeedBackType";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { highlightSyntax } from "../../../highlightSyntax/highlightSyntax";
 import extractFileNameFromUrl from "../../../Functions/extractFileNameFromUrl";
 import distructuringFeedBack from "../../../Functions/distructuringFeedBack";
+import deleteProject from "../../../API/deleteProjectRequest";
 export type AdminContentType = (string | null)[];
 
 const ProjectsToDo: React.FC = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const { url, projectId, project_title, path, feedBack } =
     location.state || {};
@@ -121,13 +123,20 @@ const ProjectsToDo: React.FC = () => {
           </div>
 
           <div className="w-full flex flex-row justify-between p-8">
-            <button className="rounded-md bg-red-800 px-5 py-2.5 text-sm font-medium text-white shadow">
-              Delete
+            <button
+              className="rounded-md bg-red-800 px-5 py-2.5 text-sm font-medium text-white shadow"
+              onClick={() => {
+                deleteProject(projectId);
+                navigate("/Projects-to-do");
+              }}
+            >
+              Delete Project
             </button>
             <button
               className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
               onClick={() => {
                 handleSubmitReview(url, adminContent, feedBackInput, projectId);
+                navigate(`/Projects-to-do/ReviewProject/${projectId}`);
               }}
             >
               Submit
@@ -137,7 +146,18 @@ const ProjectsToDo: React.FC = () => {
       ) : (
         <div className="h-full bg-gray-900 mb-10 p-4 pl-10 pt-8 rounded-lg">
           <div className="h-full flex flex-col items-start text-white">
-            {highlightSyntax(fileContent.split("\n"))}
+            {highlightSyntax(fileContent.split("\n"), adminContent)}
+          </div>
+          <div className="w-full flex flex-col p-8 mt-8 ">
+            <label htmlFor="feedBack" className="text-gray-700 text-left ">
+              FeedBack
+            </label>
+            <textarea
+              id="feedBack"
+              rows={4}
+              value={feedBackInput}
+              className="w-full bg-gray-200 border-2 border-gray-300 rounded-lg px-4 py-2 text-gray-800 resize-none focus:outline-none focus:border-blue-500 focus:bg-white"
+            ></textarea>
           </div>
         </div>
       )}

@@ -41,8 +41,11 @@ interface UserProjectProps {
   isAdmin: boolean;
 }
 import React from "react";
+
 import { Link, useNavigate } from "react-router-dom";
 import { FaCheck } from "react-icons/fa";
+import { updateTheProjectStatusRequest } from "../../API/updateTheProjectStatusRequest";
+import { publishTheProjectRequest } from "../../API/publishTheProjectRequest";
 const UserProject: React.FC<UserProjectProps> = ({
   _id,
   commitIndex,
@@ -66,7 +69,13 @@ const UserProject: React.FC<UserProjectProps> = ({
   };
 
   return (
-    <div className="flex-col lg:flex-row flex p-4 border-b border-t-gray-200 rounded-t-md rounded-b-md mr-4 mb-4">
+    <div
+      className="flex-col lg:flex-row flex p-4 border-b border-t-gray-200 rounded-t-md rounded-b-md mr-4 mb-4 hover:bg-gray-300 cursor-pointer"
+      onClick={(e) => {
+        if ((e.target as HTMLInputElement).id !== "not")
+          naviagte(`/Projects-to-do/ReviewProject/${_id}`);
+      }}
+    >
       <div className="flex items-center lg:justify-center justify-between mb-2">
         {!isAdmin && (
           <div className="flex items-center justify-center flex-row lg:flex-col gap-4 lg:gap-0">
@@ -106,26 +115,41 @@ const UserProject: React.FC<UserProjectProps> = ({
           </div>
           <div className="flex items-center space-x-2">
             {isAdmin ? (
-              <button
-                className="rounded-md bg-teal-600 px-5 py-2.5   text-sm font-medium text-white shadow"
-                onClick={() => {
-                  naviagte(`/Projects-to-do/ReviewProject/${_id}`);
-                }}
-              >
-                Review the Code
-              </button>
+              <div className="flex flex-col lg:flex-col justify-around gap-2 ">
+                <button
+                  className="rounded-md bg-teal-600 px-5 py-2.5   text-sm font-medium text-white shadow"
+                  onClick={() => {
+                    //make the project Review in progress
+                    updateTheProjectStatusRequest(_id);
+                    naviagte(`/Projects-to-do/ReviewProject/${_id}`);
+                  }}
+                >
+                  Review the Code
+                </button>
+                <button
+                  id="not"
+                  className=" rounded-md bg-teal-600 px-5 py-2.5   text-sm font-medium text-white shadow"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    //make the project Review in progress
+                    publishTheProjectRequest(_id);
+                    // window.location.reload();
+                    naviagte(`/`);
+                  }}
+                >
+                  Publish Project
+                </button>
+              </div>
             ) : (
-              <p className="ml-auto text-sm text-gray-500">
-                roshdi answered 20 days ago
-              </p>
+              <div>
+                <p className="ml-auto text-sm text-gray-500">{projectStatus}</p>
+                <p className="ml-auto text-sm text-gray-500">
+                  roshdi answered 20 days ago
+                </p>
+              </div>
             )}
           </div>
         </div>
-        {/* {isAdmin && (
-          <div className="mx-4 mt-4 text-sm text-red-600">
-            Admin: You have special access to this project.
-          </div>
-        )} */}
       </div>
     </div>
   );
