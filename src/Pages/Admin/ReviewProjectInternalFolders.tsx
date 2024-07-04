@@ -9,7 +9,7 @@ import FoldersAndFilesStructure from "../../Components/foldersAndFilesStructure"
 const ReviewProjectInternalFolders: React.FC = () => {
   const { randomNum } = useParams();
   console.log(randomNum);
-
+  // feedBack
   const onBackButtonEvent = (e: BeforeUnloadEvent) => {
     e.preventDefault();
     window.location.reload();
@@ -23,8 +23,9 @@ const ReviewProjectInternalFolders: React.FC = () => {
   const location = useLocation();
   console.log(location.state);
 
-  const { url, projectId, project_title, path } = location.state || {};
-  console.log(project_title);
+  const { url, projectId, project_title, path, feedBack } =
+    location.state || {};
+  console.log(feedBack);
 
   const { setIsLogedIn, setUser } = useContext(UserContext);
   const { isLoading } = useGetTokens(setIsLogedIn, setUser);
@@ -60,6 +61,7 @@ const ReviewProjectInternalFolders: React.FC = () => {
       <h1>{project_title}</h1>
       <h3>{path}</h3>
       <FoldersAndFilesStructure
+        feedBack={feedBack}
         projectId={projectId}
         project_title={project_title}
         staticData={gitHubProjectInternalForReviewing.foldersAndFiles}

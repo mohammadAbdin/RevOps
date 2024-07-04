@@ -1,6 +1,7 @@
 import React from "react";
 import { FaFolder, FaFileAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { FeedBackType } from "../Types/FeedBackType";
 // import { useNavigate } from "react-router-dom";
 interface Item {
   type: "tree" | "blob";
@@ -12,11 +13,12 @@ const FoldersAndFilesStructure: React.FC<{
   staticData: Item[];
   projectId: string | undefined;
   project_title: string;
-}> = ({ staticData, projectId, project_title }) => {
+  feedBack?: FeedBackType;
+}> = ({ staticData, projectId, project_title, feedBack }) => {
   console.log(project_title);
+  console.log(feedBack);
 
   const randomNumber = Math.floor(Math.random() * 200) + 1;
-  // const navigate = useNavigate();
 
   return (
     <table className="min-w-full divide-y divide-gray-200 border border-gray-200 bg-white">
@@ -44,6 +46,7 @@ const FoldersAndFilesStructure: React.FC<{
                 {item.type == "tree" ? (
                   <Link
                     state={{
+                      feedBack: feedBack,
                       path: item.path,
                       url: item.url,
                       project_title: project_title,
@@ -66,6 +69,7 @@ const FoldersAndFilesStructure: React.FC<{
                 ) : (
                   <Link
                     state={{
+                      feedBack: feedBack,
                       path: item.path,
                       url: item.url,
                       projectId: projectId,
@@ -88,9 +92,11 @@ const FoldersAndFilesStructure: React.FC<{
                   >
                     <Link
                       state={{
+                        feedBack: feedBack,
                         path: item.path,
                         url: item.url,
                         projectId: projectId,
+                        project_title: project_title,
                       }}
                       to={{
                         pathname: `/Projects-to-do/ReviewProject/internal/${randomNumber}`,
@@ -102,6 +108,7 @@ const FoldersAndFilesStructure: React.FC<{
                 ) : (
                   <Link
                     state={{
+                      feedBack: feedBack,
                       path: item.path,
                       url: item.url,
                       projectId: projectId,

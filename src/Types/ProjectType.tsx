@@ -1,3 +1,4 @@
+import { FeedBackType } from "./FeedBackType";
 export default interface ProjectType {
   project_title: string;
   githubUri: string;
@@ -9,4 +10,5 @@ export default interface ProjectType {
   commitIndex?: number;
   date?: Date;
   __v?: number;
+  feedBack?: FeedBackType;
 }

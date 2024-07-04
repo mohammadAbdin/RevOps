@@ -12,7 +12,7 @@ export const getGithubFoldersAndFiles = async (githubUri, commitIndex) => {
 
   try {
     const token = process.env.ACCOUNTS_TOKEN;
-
+    // const token = "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";
     console.log(token);
 
     const commitsResponse = await fetch(commitsUrl, {
@@ -21,13 +21,17 @@ export const getGithubFoldersAndFiles = async (githubUri, commitIndex) => {
       },
     });
     const commitsData = await commitsResponse.json();
-    // console.log(commitsData, "commitsData[commit]");
+
     const commit = commitsData.length - commitIndex;
 
     const commitSha = commitsData[commit].sha;
     const treeUrl = `https://api.github.com/repos/${owner}/${repo}/git/trees/${commitSha}`;
 
-    const treeResponse = await fetch(treeUrl);
+    const treeResponse = await fetch(treeUrl, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
     const treeData = await treeResponse.json();
     console.log(treeData, "treeData");
     const foldersAndFiles = treeData.tree;

@@ -1,6 +1,5 @@
 import { useContext, useEffect } from "react";
 import { UserContext } from "../../Context/UserContext";
-// import { FaFolder, FaFileAlt } from "react-icons/fa";
 import useReviewProjectsForAdmin from "../../Hooks/UseReviewProjectsForAdmin";
 import useGetTokens from "../../Hooks/UseGetTokens";
 import FoldersAndFilesStructure from "../../Components/foldersAndFilesStructure";
@@ -42,7 +41,8 @@ const ReviewProject: React.FC = () => {
       <FoldersAndFilesStructure
         projectId={projectId}
         project_title={gitHubProjectForReviewing.project.project_title}
-        staticData={gitHubProjectForReviewing.project.foldersAndFiles}
+        staticData={gitHubProjectForReviewing.foldersAndFiles}
+        feedBack={gitHubProjectForReviewing.project.feedBack}
       />
     </div>
   );

@@ -9,6 +9,13 @@ const projectSchema = new mongoose.Schema({
   userId: { type: String, required: true },
   commitIndex: { type: Number, required: true },
   date: { type: Date, default: Date.now },
+  feedBack: [
+    {
+      fileName: { type: String },
+      adminContent: [String],
+      feedBack: { type: String },
+    },
+  ],
 });
 
 const Project = mongoose.model("Project", projectSchema);
