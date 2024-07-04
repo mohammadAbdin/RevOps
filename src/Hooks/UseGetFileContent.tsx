@@ -3,16 +3,20 @@ import { getFileContentRequest } from "../API/getFileContentRequest";
 interface UseReviewProjectsForAdminReturn {
   getFileContent: (url: string) => Promise<string | undefined>;
   fileContent: string | null;
+  file: any;
 }
 
 const useGetFileContent = (): UseReviewProjectsForAdminReturn => {
   const [fileContent, setFileContent] = useState<string | null>(null);
+  const [file, setFile] = useState<any>(null);
 
   const getFileContent = async (url?: string) => {
     try {
-      const response: string | null = await getFileContentRequest(url);
+      const response: any | null = await getFileContentRequest(url);
       console.log("getFileContentRequest", response);
-      setFileContent(response);
+      setFile(response);
+      setFileContent(response.content);
+
       return;
     } catch (error) {
       console.error("Error fetching projects to do:", error);
@@ -24,6 +28,7 @@ const useGetFileContent = (): UseReviewProjectsForAdminReturn => {
   return {
     getFileContent,
     fileContent,
+    file,
   };
 };
 

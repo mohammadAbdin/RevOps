@@ -16,6 +16,7 @@ export const getGitHubProjectForReviewingRequest = async (
 
     if (response.ok) {
       const result: GitHubProjectResponse = await response.json();
+      console.log("result", result);
 
       return result;
     } else {

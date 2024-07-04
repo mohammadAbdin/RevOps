@@ -16,7 +16,7 @@ export const getFileContentRequest = async (
     );
 
     if (response.ok) {
-      const result: string = await response.json();
+      const result: any = await response.json();
 
       return result;
     } else {

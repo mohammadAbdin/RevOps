@@ -14,6 +14,7 @@ export const getGitHubProject = async (req, res) => {
       githubUri,
       commitIndex
     );
+    console.log(foldersAndFiles);
     res
       .status(200)
       .json({ foldersAndFiles: foldersAndFiles, project: project });

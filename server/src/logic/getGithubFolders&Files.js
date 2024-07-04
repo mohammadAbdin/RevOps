@@ -7,7 +7,7 @@ export const getGithubFoldersAndFiles = async (githubUri, commitIndex) => {
   }
 
   const [, owner, repo] = match;
-  console.log(match);
+  // console.log(match);
   const commitsUrl = `https://api.github.com/repos/${owner}/${repo}/commits`;
 
   try {
@@ -21,7 +21,7 @@ export const getGithubFoldersAndFiles = async (githubUri, commitIndex) => {
       },
     });
     const commitsData = await commitsResponse.json();
-    console.log(commitsData, "commitsData[commit]");
+    // console.log(commitsData, "commitsData[commit]");
     const commit = commitsData.length - commitIndex;
 
     const commitSha = commitsData[commit].sha;
