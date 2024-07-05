@@ -1,11 +1,11 @@
 import Project from "../../models/projectModel.js";
 
-export const getAllProjects = async (req, res) => {
+export const getCompletedProjects = async (req, res) => {
   try {
-    console.log("jiiiiiii");
-    const projects = await Project.find();
-
+    const projects = await Project.find({ projectStatus: "Completed" });
+    // console.log("projects");
     if (!projects.length) {
+      console.log("hi");
       return res.status(404).json({ message: "No completed projects found." });
     }
 

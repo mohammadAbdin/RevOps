@@ -74,7 +74,7 @@ const useLogin = (): UseLoginReturn => {
     if (response.isAdmin) {
       navigate("/");
     } else {
-      navigate("/Projects");
+      navigate("/");
     }
   };
   const handleLogout = async () => {

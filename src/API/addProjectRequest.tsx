@@ -1,6 +1,6 @@
 import ProjectType from "../Types/ProjectType";
 
-export const addProject = async (projectData: ProjectType) => {
+export const addProjectRequest = async (projectData: ProjectType) => {
   try {
     const response = await fetch(`http://localhost:5000/Project/add-project`, {
       method: "POST",

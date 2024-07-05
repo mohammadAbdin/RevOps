@@ -116,11 +116,11 @@ const AddProject: React.FC = () => {
               <div className="flex items-center space-x-3">
                 <input
                   type="text"
-                  name="tags"
+                  name="tagsName"
                   id="tags"
                   className="bg-gray-100 border border-gray-200 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"
-                  placeholder="(ex. Js,Html,Css, . . .)"
-                  value={projectData.tags}
+                  placeholder="format(Js, Html, Css, . . .)"
+                  value={projectData.tagsName}
                   onChange={handleChange}
                 />
                 <FaTags className="text-gray-700 text-xl" />

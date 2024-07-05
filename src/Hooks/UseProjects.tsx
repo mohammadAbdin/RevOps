@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ProjectType from "../Types/ProjectType";
-import { addProject } from "../API/addProjectRequest";
+import { addProjectRequest } from "../API/addProjectRequest";
 import UserType from "../Types/UserType";
 
 const useProjects = (user: UserType | undefined) => {
@@ -9,19 +9,34 @@ const useProjects = (user: UserType | undefined) => {
     githubUri: "",
     description: "",
     tags: [],
+    tagsName: "",
     projectStatus: "pending",
     _id: "" || user?._id || undefined,
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
+
     setProjectData({ ...projectData, [name]: value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const response: Promise<unknown> = await addProject(projectData);
-    console.log(response);
+    if (projectData.tagsName !== undefined) {
+      const formattedTags = projectData.tagsName
+        .split(",")
+        .map((tag) => tag.trim());
+
+      const updatedProjectData = {
+        ...projectData,
+        tags: formattedTags,
+      };
+      console.log(updatedProjectData);
+      const response: Promise<unknown> = await addProjectRequest(
+        updatedProjectData
+      );
+      console.log(response);
+    }
   };
 
   return {

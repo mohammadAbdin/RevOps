@@ -11,4 +11,5 @@ export default interface ProjectType {
   date?: Date;
   __v?: number;
   feedBack?: FeedBackType;
+  tagsName?: string;
 }

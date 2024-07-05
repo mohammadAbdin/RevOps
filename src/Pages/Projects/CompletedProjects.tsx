@@ -1,23 +1,24 @@
 import { useContext, useEffect } from "react";
 import { UserContext } from "../../Context/UserContext";
 import UserProject from "../MyProjects/UserProject";
-import useGetAllProjects from "../../Hooks/UseGetAllProjects";
+import useGetCompletedProjects from "../../Hooks/UseGetCompletedProjects";
 import useGetTokens from "../../Hooks/UseGetTokens";
 import Divider from "../../Components/Divider";
-// import { CSSTransition } from "react-transition-group";
 
-const Projects: React.FC = () => {
-  const { setIsLogedIn, setUser, isAdmin } = useContext(UserContext);
+const CompletedProjects: React.FC = () => {
+  const { setIsLogedIn, setUser, isAdmin, determineSearchData } =
+    useContext(UserContext);
   const { isLoading } = useGetTokens(setIsLogedIn, setUser);
-  const { getAllProjects, allProjects } = useGetAllProjects();
+  const { getCompletedProjects, completedProjects } =
+    useGetCompletedProjects(determineSearchData);
 
   useEffect(() => {
-    if (!isLoading && !allProjects) {
-      getAllProjects();
+    if (!isLoading && !completedProjects) {
+      getCompletedProjects();
     }
-  }, [isLoading, getAllProjects, allProjects]);
+  }, [isLoading, getCompletedProjects, completedProjects]);
 
-  if (isLoading || allProjects === null) {
+  if (isLoading || completedProjects === null) {
     return (
       <div
         className="spinner inline-block h-8 w-8 animate-spin rounded-full border-4 border-t-4 border-red-200 border-t-black"
@@ -33,11 +34,11 @@ const Projects: React.FC = () => {
       <Divider text="" />
       <div className="mb-8 lg:mb-16"></div>
 
-      {allProjects.map((project, index) => (
+      {completedProjects.map((project, index) => (
         <UserProject key={index} {...project} isAdmin={isAdmin} />
       ))}
     </div>
   );
 };
 
-export default Projects;
+export default CompletedProjects;

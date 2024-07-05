@@ -1,33 +1,3 @@
-// commitIndex
-// :
-// 5
-// date
-// :
-// "2024-07-02T07:59:11.629Z"
-// description
-// :
-// "hussein is not a good person"
-// githubUri
-// :
-// "https://github.com/mohammadAbdin/RevOps"
-// projectStatus
-// :
-// "pending"
-// project_title
-// :
-// "RevOps"
-// tags
-// :
-// ['html ,js']
-// userId
-// :
-// "668023014356eab2ca06edc9"
-// __v
-// :
-// 0
-// _id
-// :
-// "6682830452313f126277a70c"
 interface UserProjectProps {
   _id?: string;
   commitIndex?: number;
@@ -43,9 +13,10 @@ interface UserProjectProps {
 import React from "react";
 
 import { Link, useNavigate } from "react-router-dom";
-import { FaCheck } from "react-icons/fa";
+import { FaCheck, FaTimes } from "react-icons/fa";
 import { updateTheProjectStatusRequest } from "../../API/updateTheProjectStatusRequest";
 import { publishTheProjectRequest } from "../../API/publishTheProjectRequest";
+import deleteProject from "../../API/deleteProjectRequest";
 const UserProject: React.FC<UserProjectProps> = ({
   _id,
   commitIndex,
@@ -76,6 +47,24 @@ const UserProject: React.FC<UserProjectProps> = ({
           naviagte(`/Projects-to-do/ReviewProject/${_id}`);
       }}
     >
+      {isAdmin ? (
+        <FaTimes
+          id="not"
+          className=" top-2 right-2 size-6 text-red-600  hover:text-black cursor-pointer"
+          onClick={(e) => {
+            e.stopPropagation();
+            if (
+              window.confirm("Are you sure you want to delete the project?")
+            ) {
+              // toaster
+              if (_id !== undefined) deleteProject(_id);
+              setTimeout(() => {
+                window.location.reload();
+              }, 500);
+            }
+          }}
+        />
+      ) : null}
       <div className="flex items-center lg:justify-center justify-between mb-2">
         {!isAdmin && (
           <div className="flex items-center justify-center flex-row lg:flex-col gap-4 lg:gap-0">
@@ -102,10 +91,11 @@ const UserProject: React.FC<UserProjectProps> = ({
           </p>
         </div>
         <div className="flex flex-row justify-between items-baseline mx-4">
-          <div className="flex items-center space-x-2 mb-2">
+          <div className="flex items-center flex-wrap space-x-2 mb-2">
             {tags.map((tag, index) => (
               <Link
-                to={`/tags/${tag}`}
+                // tags/${tag}
+                to={`/`}
                 key={index}
                 className="bg-gray-200 text-gray-800 text-sm font-medium px-2 py-1 rounded hover:bg-gray-300"
               >
@@ -117,18 +107,20 @@ const UserProject: React.FC<UserProjectProps> = ({
             {isAdmin ? (
               <div className="flex flex-col lg:flex-col justify-around gap-2 ">
                 <button
-                  className="rounded-md bg-teal-600 px-5 py-2.5   text-sm font-medium text-white shadow"
+                  className="rounded-md bg-teal-600 hover:bg-teal-800 px-5 py-2.5   text-sm font-medium text-white shadow"
                   onClick={() => {
                     //make the project Review in progress
                     updateTheProjectStatusRequest(_id);
                     naviagte(`/Projects-to-do/ReviewProject/${_id}`);
                   }}
                 >
-                  Review the Code
+                  {projectStatus == "Review in progress"
+                    ? "Continue Reviewing"
+                    : "Review the Code"}
                 </button>
                 <button
                   id="not"
-                  className=" rounded-md bg-teal-600 px-5 py-2.5   text-sm font-medium text-white shadow"
+                  className=" rounded-md bg-teal-600 px-5 py-2.5 hover:bg-teal-800   text-sm font-medium text-white shadow"
                   onClick={(e) => {
                     e.preventDefault();
                     //make the project Review in progress
@@ -137,7 +129,9 @@ const UserProject: React.FC<UserProjectProps> = ({
                     naviagte(`/`);
                   }}
                 >
-                  Publish Project
+                  {projectStatus != "Completed"
+                    ? "Publish Project"
+                    : "Edit and republish"}
                 </button>
               </div>
             ) : (

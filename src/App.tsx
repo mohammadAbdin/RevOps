@@ -2,7 +2,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Sidebar from "./Components/SideBar";
 import NavBar from "./Components/NavBar";
 import Home from "./Pages/Home/Home";
-import Projects from "./Pages/Projects/Projects";
 import LogIn from "./Pages/LogIn/LogIn";
 import Register from "./Pages/LogIn/Register";
 import AddProject from "./Pages/AddProject/AddProject";
@@ -12,6 +11,8 @@ import ProtectedRoute from "./Components/ProtectedRoute";
 import ReviewProject from "./Pages/Admin/ReviewProject";
 import ReviewProjectInternalFolders from "./Pages/Admin/ReviewProjectInternalFolders";
 import DisplayFile from "./Pages/Admin/displayFile/DisplayFile";
+import CompletedProjects from "./Pages/Projects/CompletedProjects";
+import AllProjects from "./Pages/Admin/AllProjects/AllProjects";
 
 const AppLayout = () => {
   return (
@@ -41,10 +42,10 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/Projects",
+        path: "/CompletedProjects",
         element: (
           // <UserProvider>
-          <Projects />
+          <CompletedProjects />
           // </UserProvider>
         ),
       },
@@ -70,6 +71,16 @@ const router = createBrowserRouter([
           // <UserProvider>
           <ProtectedRoute adminOnly>
             <ProjectsToDo />
+          </ProtectedRoute>
+          // {/* </UserProvider> */}
+        ),
+      },
+      {
+        path: "/Projects",
+        element: (
+          // <UserProvider>
+          <ProtectedRoute adminOnly>
+            <AllProjects />
           </ProtectedRoute>
           // {/* </UserProvider> */}
         ),

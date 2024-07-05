@@ -6,9 +6,11 @@ import useGetTokens from "../../Hooks/UseGetTokens";
 import Divider from "../../Components/Divider";
 
 const MyProjects: React.FC = () => {
-  const { setIsLogedIn, setUser, user, isAdmin } = useContext(UserContext);
+  const { setIsLogedIn, setUser, user, isAdmin, determineSearchData } =
+    useContext(UserContext);
   const { isLoading } = useGetTokens(setIsLogedIn, setUser);
-  const { getUserProjects, userProjects } = useGetUserProjects();
+  const { getUserProjects, userProjects } =
+    useGetUserProjects(determineSearchData);
 
   useEffect(() => {
     if (!isLoading && user && !userProjects) {
