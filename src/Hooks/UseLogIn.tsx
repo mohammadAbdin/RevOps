@@ -44,7 +44,7 @@ const useLogin = (): UseLoginReturn => {
       setPasswordError("Please confirm your password.");
       return;
     }
-    const response: Promise<LogInResponse> = logIn(
+    const response: LogInResponse = await logIn(
       email,
       password,
       name,
@@ -53,6 +53,12 @@ const useLogin = (): UseLoginReturn => {
       "/LogIn/Register"
     );
     console.log(response);
+    setUser(response.user);
+    if (response.token) {
+      Cookies.set("token", response.token);
+    }
+
+    navigate("/");
   };
   const handlelogIn = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -71,11 +77,7 @@ const useLogin = (): UseLoginReturn => {
       Cookies.set("token", response.token);
     }
 
-    if (response.isAdmin) {
-      navigate("/");
-    } else {
-      navigate("/");
-    }
+    navigate("/");
   };
   const handleLogout = async () => {
     try {

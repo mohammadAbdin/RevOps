@@ -12,4 +12,5 @@ export default interface ProjectType {
   __v?: number;
   feedBack?: FeedBackType;
   tagsName?: string;
+  views?: number;
 }

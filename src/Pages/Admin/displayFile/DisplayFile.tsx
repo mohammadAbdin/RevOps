@@ -76,7 +76,7 @@ const ProjectsToDo: React.FC = () => {
 
   return (
     <div className="flex-grow h-full flex flex-col gap-0 home">
-      <Divider text="My Projects" />
+      <Divider text="" />
       <div className="mb-8 lg:mb-16"></div>
       <h1 className="bg-gray-900 w-full text-white rounded-t-lg border-b-4 border-white text-3xl py-2 px-4">
         {project_title}
@@ -155,6 +155,7 @@ const ProjectsToDo: React.FC = () => {
             <textarea
               id="feedBack"
               rows={4}
+              onChange={() => {}}
               value={feedBackInput}
               className="w-full bg-gray-200 border-2 border-gray-300 rounded-lg px-4 py-2 text-gray-800 resize-none focus:outline-none focus:border-blue-500 focus:bg-white"
             ></textarea>

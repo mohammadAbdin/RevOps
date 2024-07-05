@@ -16,6 +16,7 @@ const projectSchema = new mongoose.Schema({
       feedBack: { type: String },
     },
   ],
+  views: { type: Number, required: true },
 });
 
 const Project = mongoose.model("Project", projectSchema);

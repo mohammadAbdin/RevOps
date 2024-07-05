@@ -5,6 +5,7 @@ export const addProject = async (req, res) => {
     req.body;
   const commitIndex = await getCommitIndex(githubUri);
   const userId = _id;
+  const views = 0;
   console.log(tags);
   try {
     const newProject = new Project({
@@ -15,6 +16,7 @@ export const addProject = async (req, res) => {
       projectStatus,
       userId,
       commitIndex,
+      views,
     });
 
     await newProject.save();

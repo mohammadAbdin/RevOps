@@ -16,7 +16,7 @@ export const highlightSyntax = (
 
     if (line.trim().endsWith("{") || line.trim().endsWith("}")) {
       return (
-        <span>
+        <span key={index}>
           <span
             className="text-left border-none  text-bold text-yellow-200 whitespace-pre-wrap break-words"
             key={index}

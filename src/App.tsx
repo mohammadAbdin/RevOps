@@ -13,6 +13,7 @@ import ReviewProjectInternalFolders from "./Pages/Admin/ReviewProjectInternalFol
 import DisplayFile from "./Pages/Admin/displayFile/DisplayFile";
 import CompletedProjects from "./Pages/Projects/CompletedProjects";
 import AllProjects from "./Pages/Admin/AllProjects/AllProjects";
+import ProjectsByTag from "./Pages/SearchResults/SearchResults";
 
 const AppLayout = () => {
   return (
@@ -62,6 +63,14 @@ const router = createBrowserRouter([
         element: (
           // <UserProvider>
           <MyProjects />
+          // </UserProvider>
+        ),
+      },
+      {
+        path: "/Projects/:tag",
+        element: (
+          // <UserProvider>
+          <ProjectsByTag />
           // </UserProvider>
         ),
       },

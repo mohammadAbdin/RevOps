@@ -9,11 +9,13 @@ interface UserProjectProps {
   description: string;
   tags: string[];
   isAdmin: boolean;
+  views?: number;
 }
 import React from "react";
 
 import { Link, useNavigate } from "react-router-dom";
 import { FaCheck, FaTimes } from "react-icons/fa";
+import { updateTheProjectViewsRequest } from "../../API/incrementProjectViewsRequest";
 import { updateTheProjectStatusRequest } from "../../API/updateTheProjectStatusRequest";
 import { publishTheProjectRequest } from "../../API/publishTheProjectRequest";
 import deleteProject from "../../API/deleteProjectRequest";
@@ -28,6 +30,7 @@ const UserProject: React.FC<UserProjectProps> = ({
   description,
   tags,
   isAdmin,
+  views,
 }) => {
   console.log(commitIndex, date, githubUri, projectStatus, userId);
 
@@ -43,6 +46,7 @@ const UserProject: React.FC<UserProjectProps> = ({
     <div
       className="flex-col lg:flex-row flex p-4 border-b border-t-gray-200 rounded-t-md rounded-b-md mr-4 mb-4 hover:bg-gray-300 cursor-pointer"
       onClick={(e) => {
+        if (!isAdmin) updateTheProjectViewsRequest(_id);
         if ((e.target as HTMLInputElement).id !== "not")
           naviagte(`/Projects-to-do/ReviewProject/${_id}`);
       }}
@@ -75,8 +79,8 @@ const UserProject: React.FC<UserProjectProps> = ({
               <div className="text-sm text-gray-600">answers</div>
             </div>
             <div className="flex flex-row lg:flex-col items-center justify-around">
-              <div className="text-xl font-bold">47</div>
-              <div className="text-sm text-gray-600">views</div>
+              <div className="text-xl font-bold">{views}</div>
+              <div className="text-sm text-gray-600 ml-1">views</div>
             </div>
           </div>
         )}
@@ -137,9 +141,7 @@ const UserProject: React.FC<UserProjectProps> = ({
             ) : (
               <div>
                 <p className="ml-auto text-sm text-gray-500">{projectStatus}</p>
-                <p className="ml-auto text-sm text-gray-500">
-                  roshdi answered 20 days ago
-                </p>
+                <p className="ml-auto text-sm text-gray-500">Admins answered</p>
               </div>
             )}
           </div>
