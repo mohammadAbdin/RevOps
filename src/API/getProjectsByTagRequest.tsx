@@ -6,7 +6,7 @@ export const getProjectsByTagRequest = async (
 ): Promise<ProjectType[] | null> => {
   try {
     const response = await axios.get<ProjectType[]>(
-      `http://localhost:5000/Project/projects-by-tag`,
+      `https://rev-ops-code-review-site.onrender.com/Project/projects-by-tag`,
       {
         params: { tag },
         headers: {

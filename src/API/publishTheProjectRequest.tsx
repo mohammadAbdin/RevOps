@@ -3,7 +3,7 @@ import axios from "axios";
 export const publishTheProjectRequest = async (_id: string | undefined) => {
   try {
     const response = await axios.put(
-      `http://localhost:5000/Project/publish-project/${_id}`
+      `https://rev-ops-code-review-site.onrender.com/Project/publish-project/${_id}`
     );
 
     return response.data;

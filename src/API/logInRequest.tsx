@@ -10,7 +10,7 @@ export const logIn = async (
 ) => {
   try {
     const response = await axios.post(
-      `http://localhost:5000${path}`,
+      `https://rev-ops-code-review-site.onrender.com${path}`,
       { email, password, name },
       {
         headers: {

@@ -80,10 +80,13 @@ const useLogin = (): UseLoginReturn => {
   };
   const handleLogout = async () => {
     try {
-      const response = await fetch("http://localhost:5000/LogIn/logout", {
-        method: "POST",
-        credentials: "include",
-      });
+      const response = await fetch(
+        "https://rev-ops-code-review-site.onrender.com/LogIn/logout",
+        {
+          method: "POST",
+          credentials: "include",
+        }
+      );
 
       if (response.ok) {
         Cookies.remove("token");

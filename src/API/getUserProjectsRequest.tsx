@@ -9,7 +9,7 @@ export const getUserProjectsRequest = async (
 
   try {
     const response = await axios.get<ProjectType[]>(
-      `http://localhost:5000/Project/user/${id}`,
+      `https://rev-ops-code-review-site.onrender.com/Project/user/${id}`,
       {
         headers: {
           "Content-Type": "application/json",
