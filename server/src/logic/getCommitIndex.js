@@ -10,8 +10,9 @@ export const getCommitIndex = async (url) => {
   const apiURL = `https://api.github.com/repos/${owner}/${repo}/commits`;
 
   const response = await fetch(apiURL);
-
+  console.log(apiURL);
+  console.log("response.data", response.data);
+  console.log(response);
   const data = await response.json();
-  console.log(data);
   return data.length;
 };
