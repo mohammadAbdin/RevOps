@@ -17,6 +17,7 @@ export const getGitHubProjectInternalForReviewingRequest = async (
         withCredentials: true,
       }
     );
+    console.log(projectId);
 
     return response.data;
   } catch (error) {
