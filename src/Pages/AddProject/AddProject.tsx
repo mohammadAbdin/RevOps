@@ -53,7 +53,7 @@ const AddProject: React.FC = () => {
             handleSubmit(e);
             setTimeout(() => {
               navigate("/My-Projects");
-            }, 3000);
+            }, 2000);
           }}
         >
           <div className="mt-8 space-y-6">
