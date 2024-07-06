@@ -24,7 +24,7 @@ const Home: React.FC = () => {
         <div className="flex items-end w-full justify-center top-8">
           <img src={RevOpsLogo} className="w-32 h-auto" alt="Description" />
         </div>
-        <h2 className="font-bold text-4xl font-raleway text-gray-900">
+        <h2 className="font-bold text-4xl font-raleway text-gray-800">
           What is code review?
         </h2>
         <p className="font-open-sans font-normal text-gray-600 text-xl">
@@ -77,7 +77,7 @@ const Home: React.FC = () => {
         </div>
       </div>
       <div className="mt-8 flex flex-col xl:p-16 xl:pt-2 p-2 gap-8">
-        <h2 className="font-bold text-4xl font-raleway text-gray-900">
+        <h2 className="font-bold text-4xl font-raleway text-gray-800">
           Why Code Reviews are Important
         </h2>
         <p className="text-xl font-open-sans font-normal text-gray-600">
@@ -97,7 +97,7 @@ const Home: React.FC = () => {
         </p>
       </div>
       <div className="mt-8 flex flex-col xl:p-16 xl:pt-2 p-2 gap-8">
-        <h2 className="font-bold text-4xl font-raleway text-gray-900">
+        <h2 className="font-bold text-4xl font-raleway text-gray-800">
           Code Review Checklist
         </h2>
         <p className="text-xl font-open-sans font-normal text-gray-600">

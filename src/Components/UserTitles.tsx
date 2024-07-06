@@ -1,4 +1,6 @@
 import React from "react";
+import { FaBell } from "react-icons/fa";
+
 import SearchInput from "./SearchInput";
 const UserTitles: React.FC = () => {
   return (
@@ -6,16 +8,13 @@ const UserTitles: React.FC = () => {
       <SearchInput />
 
       <li>
-        <a
-          className="meduimL:block hidden transition hover:text-gray-500/75"
-          href="#"
-        >
-          notification
+        <a className="meduimL:block hidden transition cursor-pointer text-lg hover:bg-white/10 p-2 rounded">
+          <FaBell />
         </a>
       </li>
       <li>
         <a
-          className="meduimL:block hidden  transition hover:text-gray-500/75"
+          className="meduimL:block hidden  transition text-lg hover:bg-white/10 p-2 rounded "
           href="#"
         >
           Chat

@@ -8,7 +8,7 @@ function CheckIcon() {
       viewBox="0 0 24 24"
       className="w-6 h-6"
     >
-      <g fill-rule="nonzero" fill="none">
+      <g fillRule="nonzero" fill="none">
         <path d="M0 0h24v24H0z" fill="none"></path>
         <path
           fill="#67BE3C"

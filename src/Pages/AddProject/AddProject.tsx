@@ -38,12 +38,13 @@ const AddProject: React.FC = () => {
   return (
     <div className="w-full home mt-8">
       <div className="p-8 rounded border border-gray-200 ">
-        <h1 className="font-medium text-3xl mt-4">
-          {user ? user.name : "Add Project"}
-        </h1>
-        <p className="text-gray-600 mt-6">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos
-          dolorem vel cupiditate laudantium dicta.
+        <h2 className="font-bold text-4xl font-raleway text-gray-800">
+          {/* {user ? user.name : "Add Project"} */}
+          Add Project
+        </h2>
+        <p className=" mt-6 font-open-sans font-normal text-gray-600 text-xl">
+          You can implement your github repository, you will be notified when
+          the project is reviewed
         </p>
         <form
           onSubmit={(e) => {

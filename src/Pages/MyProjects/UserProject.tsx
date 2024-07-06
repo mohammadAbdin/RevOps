@@ -107,6 +107,7 @@ const UserProject: React.FC<UserProjectProps> = ({
                   className="rounded-md bg-teal-600 hover:bg-teal-800 px-5 py-2.5   text-sm font-medium text-white shadow"
                   onClick={() => {
                     updateTheProjectStatusRequest(_id);
+
                     navigate(`/Projects-to-do/ReviewProject/${_id}`);
                   }}
                 >
