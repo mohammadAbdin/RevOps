@@ -5,4 +5,5 @@ export default interface UserType {
   iat: number;
   exp: number;
   isAdmin?: boolean;
+  notification?: string[];
 }

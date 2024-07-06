@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
 
             <div className="md:flex md:items-center md:gap-12">
               <nav aria-label="Global" className=" lg:block text-white">
-                <UserTitles />
+                <UserTitles user={user} />
               </nav>
               <div className="flex items-center gap-4">
                 {user ? (

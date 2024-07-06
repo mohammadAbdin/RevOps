@@ -8,6 +8,7 @@ import { updateTheProjectStatusRequest } from "../../API/updateTheProjectStatusR
 import { publishTheProjectRequest } from "../../API/publishTheProjectRequest";
 import deleteProject from "../../API/deleteProjectRequest";
 import { showToastSuccessMessage } from "../../Components/Toast/Toasts";
+import { addNotificationRequest } from "../../API/addNotificationRequest";
 const UserProject: React.FC<UserProjectProps> = ({
   _id,
   projectStatus,
@@ -16,6 +17,7 @@ const UserProject: React.FC<UserProjectProps> = ({
   tags,
   isAdmin,
   views,
+  userId,
 }) => {
   const navigate = useNavigate();
   const truncateDescription = (text: string, maxLength: number) => {
@@ -107,7 +109,10 @@ const UserProject: React.FC<UserProjectProps> = ({
                   className="rounded-md bg-teal-600 hover:bg-teal-800 px-5 py-2.5   text-sm font-medium text-white shadow"
                   onClick={() => {
                     updateTheProjectStatusRequest(_id);
-
+                    addNotificationRequest(
+                      `Your project ${project_title} is under reviewing it will be published soon`,
+                      userId
+                    );
                     navigate(`/Projects-to-do/ReviewProject/${_id}`);
                   }}
                 >
@@ -120,6 +125,10 @@ const UserProject: React.FC<UserProjectProps> = ({
                   className=" rounded-md bg-teal-600 px-5 py-2.5 hover:bg-teal-800   text-sm font-medium text-white shadow"
                   onClick={(e) => {
                     e.preventDefault();
+                    addNotificationRequest(
+                      `Your project ${project_title} is published`,
+                      userId
+                    );
                     showToastSuccessMessage("you published the project");
                     publishTheProjectRequest(_id);
                     navigate(`/`);

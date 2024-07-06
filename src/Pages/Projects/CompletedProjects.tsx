@@ -29,6 +29,7 @@ const CompletedProjects: React.FC = () => {
     );
   }
 
+  console.log(completedProjects);
   return (
     <div className="flex-grow flex flex-col gap-0 home">
       <Divider text="" />
