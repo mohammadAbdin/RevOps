@@ -12,6 +12,6 @@ export const getCommitIndex = async (url) => {
   const response = await fetch(apiURL);
 
   const data = await response.json();
-
+  console.log(data);
   return data.length;
 };
