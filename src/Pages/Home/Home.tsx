@@ -1,3 +1,4 @@
+import RevOpsLogo from "../../assets/images/RevOpsLogo.jpg";
 import { useContext } from "react";
 import { UserContext } from "../../Context/UserContext";
 import "react-toastify/dist/ReactToastify.css";
@@ -19,7 +20,10 @@ const Home: React.FC = () => {
   ];
   return (
     <div className="w-full home ">
-      <div className="mt-8 flex flex-col xl:p-16 xl:pt-2 p-2 gap-8">
+      <div className="mt-2 flex flex-col xl:p-16 xl:pt-2 p-2 gap-2">
+        <div className="flex items-end w-full justify-center top-8">
+          <img src={RevOpsLogo} className="w-32 h-auto" alt="Description" />
+        </div>
         <h2 className="font-bold text-4xl font-raleway text-gray-900">
           What is code review?
         </h2>

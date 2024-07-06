@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite --port 3006",
     "build": "tsc -b && vite build",
+    "back-end": "nodemon server/src/index.js",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "build:css": "tailwindcss -i ./src/App.css -o ./src/index.css --minify",

@@ -2,7 +2,7 @@ import React from "react";
 import SearchInput from "./SearchInput";
 const UserTitles: React.FC = () => {
   return (
-    <ul className="flex md:flex items-center gap-6 text-sm">
+    <ul className="flex md:flex items-center gap-6 mr-10 text-sm">
       <SearchInput />
 
       <li>

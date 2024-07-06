@@ -48,7 +48,7 @@ const SearchInput: React.FC = () => {
         placeholder="Search for..."
         value={query}
         onChange={handleInputChange}
-        className="w-40 lg:w-full rounded-md border-gray-200 py-2.5 pr-10 shadow-sm sm:text-sm p-4 text-black bg-white"
+        className="w-40 mr-32 lg:w-full rounded-md border-gray-200 py-2.5 pr-10 shadow-sm sm:text-sm p-4 text-black bg-white"
       />
       <span className="absolute inset-y-0 right-0 grid w-10  lg:w-20 place-content-center">
         <button type="button" className="text-gray-600 hover:text-gray-700">
