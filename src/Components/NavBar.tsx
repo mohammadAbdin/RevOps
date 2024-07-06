@@ -5,6 +5,7 @@ import { UserContext } from "../Context/UserContext";
 import useGetTokens from "../Hooks/UseGetTokens";
 import useLogin from "../Hooks/UseLogIn";
 import UserTitles from "./UserTitles";
+import HamburgerMenu from "./HamburgerMenu";
 const Navbar: React.FC = () => {
   const navigate = useNavigate();
   const { setIsLogedIn, setUser, user } = useContext(UserContext);
@@ -71,8 +72,8 @@ const Navbar: React.FC = () => {
                     </div>
                   </div>
                 )}
-
-                <div className="block meduimL:hidden fixed right-4 top-2">
+                <HamburgerMenu />
+                {/* <div className="block meduimL:hidden fixed right-4 top-2">
                   <button className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +90,7 @@ const Navbar: React.FC = () => {
                       />
                     </svg>
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

@@ -46,7 +46,7 @@ const ReviewProjectInternalFolders: React.FC = () => {
   if (isLoading || gitHubProjectInternalForReviewing === null) {
     return (
       <div
-        className="spinner inline-block h-8 w-8 animate-spin rounded-full border-4 border-t-4 border-red-200 border-t-black"
+        className="spinner mt-20 inline-block h-8 w-8 animate-spin rounded-full border-4 border-t-4 border-red-200 border-t-black"
         role="status"
       >
         <span className="sr-only">Loading...</span>
