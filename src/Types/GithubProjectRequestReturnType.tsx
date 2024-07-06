@@ -1,9 +1,9 @@
 import ProjectType from "./ProjectType";
 export interface FolderOrFile {
   path: string;
-  type: "blob" | "tree"; // blob for files, tree for folders
+  type: "blob" | "tree";
   sha: string;
-  size: number; // size in bytes, valid only for files (blobs)
+  size: number;
   url: string;
 }
 

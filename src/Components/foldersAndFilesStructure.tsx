@@ -2,7 +2,6 @@ import React from "react";
 import { FaFolder, FaFileAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { FeedBackType } from "../Types/FeedBackType";
-// import { useNavigate } from "react-router-dom";
 interface Item {
   type: "tree" | "blob";
   path: string;
@@ -15,9 +14,6 @@ const FoldersAndFilesStructure: React.FC<{
   project_title: string;
   feedBack?: FeedBackType;
 }> = ({ staticData, projectId, project_title, feedBack }) => {
-  console.log(project_title);
-  console.log(feedBack);
-
   const randomNumber = Math.floor(Math.random() * 200) + 1;
 
   return (

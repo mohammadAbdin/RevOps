@@ -20,7 +20,7 @@ const Sidebar: React.FC = () => {
   }
   return (
     <>
-      <div className=" lg:flex flex-col h-screen justify-between  hidden mr-32  xl:mr-0 border-e bg-white lg:w-40 w-20 items-start   relative left-0  top-32">
+      <div className=" lg:flex flex-col h-full justify-between  hidden mr-32  xl:mr-0 border-e bg-white lg:w-40 w-20 items-start   relative left-0  top-32">
         <div className=" sticky px-1 py-6 w-32">
           {isAdmin ? <AdminSideBarSections /> : <UserSideBarSections />}
         </div>

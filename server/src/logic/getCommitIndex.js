@@ -8,7 +8,6 @@ export const getCommitIndex = async (url) => {
 
   const [, owner, repo] = match;
   const apiURL = `https://api.github.com/repos/${owner}/${repo}/commits`;
-  console.log("match:", match);
 
   const response = await fetch(apiURL);
 

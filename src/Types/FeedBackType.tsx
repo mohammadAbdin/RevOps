@@ -1,6 +1,6 @@
 export interface FeedBackType {
   fileName: string;
-  adminContent: (string | null)[]; // Array of strings or nulls
+  adminContent: (string | null)[];
   feedBack: string;
   _id: string;
 }

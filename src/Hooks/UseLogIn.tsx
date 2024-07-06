@@ -52,7 +52,6 @@ const useLogin = (): UseLoginReturn => {
       setError,
       "/LogIn/Register"
     );
-    console.log(response);
     setUser(response.user);
     if (response.token) {
       Cookies.set("token", response.token);

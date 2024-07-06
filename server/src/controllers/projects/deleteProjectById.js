@@ -1,6 +1,5 @@
 import Project from "../../models/projectModel.js";
 
-// Delete Project Controller
 export const deleteProjectById = async (req, res) => {
   const { id } = req.params;
 

@@ -17,7 +17,6 @@ const useGetAllProjects = (
     try {
       const response: ProjectType[] | null = await getAllProjectsRequest();
       setAllProjects(response);
-      // console.log(response);
       determineSearchData({ data: response });
     } catch (error) {
       console.error("Error fetching all projects:", error);

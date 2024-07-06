@@ -1,4 +1,4 @@
-import Project from "../../models/projectModel.js"; // Adjust the path as per your project structure
+import Project from "../../models/projectModel.js";
 
 export const updateProjectStatus = async (req, res) => {
   const projectId = req.params._id;

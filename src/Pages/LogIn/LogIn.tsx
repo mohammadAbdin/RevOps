@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import useLogin from "../../Hooks/UseLogIn";
 import logo from "../../assets/images/logo.png";
+import { showToastSuccessMessage } from "../../Components/Toast/Toasts";
 
 const LogIn: React.FC = () => {
   const { email, password, setEmail, setPassword, handlelogIn, error } =
@@ -24,7 +25,13 @@ const LogIn: React.FC = () => {
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
               Sign in to your account
             </h1>
-            <form className="space-y-4 md:space-y-6" onSubmit={handlelogIn}>
+            <form
+              className="space-y-4 md:space-y-6"
+              onSubmit={(e) => {
+                showToastSuccessMessage("You loged in successfully");
+                handlelogIn(e);
+              }}
+            >
               {error && <div className="text-red-500">{error}</div>}
               <div>
                 <label className="block mb-2 text-left text-sm font-medium text-gray-900 dark:text-white">

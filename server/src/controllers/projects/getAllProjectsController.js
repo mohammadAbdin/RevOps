@@ -2,7 +2,6 @@ import Project from "../../models/projectModel.js";
 
 export const getAllProjects = async (req, res) => {
   try {
-    console.log("jiiiiiii");
     const projects = await Project.find();
 
     if (!projects.length) {

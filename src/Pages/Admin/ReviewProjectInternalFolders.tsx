@@ -9,7 +9,6 @@ import FoldersAndFilesStructure from "../../Components/foldersAndFilesStructure"
 const ReviewProjectInternalFolders: React.FC = () => {
   const { randomNum } = useParams();
   console.log(randomNum);
-  // feedBack
   const onBackButtonEvent = (e: BeforeUnloadEvent) => {
     e.preventDefault();
     window.location.reload();
@@ -21,7 +20,6 @@ const ReviewProjectInternalFolders: React.FC = () => {
     };
   }, []);
   const location = useLocation();
-  console.log(location.state);
 
   const { url, projectId, project_title, path, feedBack } =
     location.state || {};

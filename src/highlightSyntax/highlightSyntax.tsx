@@ -1,15 +1,14 @@
 import { AdminContentType } from "../Pages/Admin/displayFile/DisplayFile";
 export const highlightSyntax = (
-  text: string[],
+  text: string[] | undefined,
   adminContent: AdminContentType | undefined
 ) => {
   const lines = text;
 
-  return lines.map((line, index) => {
+  return lines?.map((line, index) => {
     let additionalsFromAdmin: string = "";
     if (adminContent && adminContent[index] != null) {
       additionalsFromAdmin = adminContent[index].replace(line, "");
-      console.log(additionalsFromAdmin);
     }
 
     const keyValuePattern = /^([\w-]+)\s*:\s*(.+);?$/;

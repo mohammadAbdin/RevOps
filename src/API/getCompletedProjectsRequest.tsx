@@ -11,7 +11,7 @@ export const getCompletedProjectsRequest = async (): Promise<
         headers: {
           "Content-Type": "application/json",
         },
-        withCredentials: true, // Include this if your server requires credentials
+        withCredentials: true,
       }
     );
 

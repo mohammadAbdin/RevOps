@@ -16,11 +16,10 @@ export const getGitHubProjectForReviewingRequest = async (
         headers: {
           "Content-Type": "application/json",
         },
-        withCredentials: true, // Include if your server requires credentials
+        withCredentials: true,
       }
     );
 
-    console.log("result", response.data);
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {

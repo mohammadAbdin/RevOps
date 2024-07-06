@@ -4,7 +4,6 @@ export const getProjectsByUserId = async (req, res) => {
   try {
     const { userId } = req.params;
     const projects = await Project.find({ userId });
-    console.log(projects);
     if (!projects.length) {
       return res
         .status(404)

@@ -8,7 +8,6 @@ import { useParams } from "react-router-dom";
 
 const ProjectsByTag: React.FC = () => {
   const { tag } = useParams();
-  //   console.log(tag);
 
   const { setIsLogedIn, setUser, isAdmin, determineSearchData } =
     useContext(UserContext);

@@ -14,12 +14,14 @@ import DisplayFile from "./Pages/Admin/displayFile/DisplayFile";
 import CompletedProjects from "./Pages/Projects/CompletedProjects";
 import AllProjects from "./Pages/Admin/AllProjects/AllProjects";
 import ProjectsByTag from "./Pages/SearchResults/SearchResults";
+import { ToastContainer } from "react-toastify";
 
 const AppLayout = () => {
   return (
     <div className="h-full w-full flex flex-row gap-8">
       <NavBar />
       <Sidebar />
+      <ToastContainer />
     </div>
   );
 };
@@ -27,102 +29,56 @@ const AppLayout = () => {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      // <UserProvider>
-      <AppLayout />
-      // </UserProvider>
-    ),
+    element: <AppLayout />,
     children: [
       {
         index: true,
         path: "/",
-        element: (
-          // <UserProvider>
-          <Home />
-          // </UserProvider>
-        ),
+        element: <Home />,
       },
       {
         path: "/CompletedProjects",
-        element: (
-          // <UserProvider>
-          <CompletedProjects />
-          // </UserProvider>
-        ),
+        element: <CompletedProjects />,
       },
       {
         path: "/Add-Project",
-        element: (
-          // <UserProvider>
-          <AddProject />
-          // </UserProvider>
-        ),
+        element: <AddProject />,
       },
       {
         path: "/My-Projects",
-        element: (
-          // <UserProvider>
-          <MyProjects />
-          // </UserProvider>
-        ),
+        element: <MyProjects />,
       },
       {
         path: "/Projects/:tag",
-        element: (
-          // <UserProvider>
-          <ProjectsByTag />
-          // </UserProvider>
-        ),
+        element: <ProjectsByTag />,
       },
       {
         path: "/Projects-to-do",
         element: (
-          // <UserProvider>
           <ProtectedRoute adminOnly>
             <ProjectsToDo />
           </ProtectedRoute>
-          // {/* </UserProvider> */}
         ),
       },
       {
         path: "/Projects",
         element: (
-          // <UserProvider>
           <ProtectedRoute adminOnly>
             <AllProjects />
           </ProtectedRoute>
-          // {/* </UserProvider> */}
         ),
       },
       {
         path: "/Projects-to-do/ReviewProject/:projectId",
-        element: (
-          // <UserProvider>
-          // <ProtectedRoute adminOnly>
-          <ReviewProject />
-          // </ProtectedRoute>
-          // {/* </UserProvider> */}
-        ),
+        element: <ReviewProject />,
       },
       {
         path: "/Projects-to-do/ReviewProject/internal/:randomNum",
-        element: (
-          // <UserProvider>
-          // <ProtectedRoute adminOnly>
-          <ReviewProjectInternalFolders />
-          // </ProtectedRoute>
-          // {/* </UserProvider> */}
-        ),
+        element: <ReviewProjectInternalFolders />,
       },
       {
         path: "/file/content/:encodedUrl",
-        element: (
-          // <UserProvider>
-          // <ProtectedRoute adminOnly>
-          <DisplayFile />
-          // </ProtectedRoute>
-          // {/* </UserProvider> */}
-        ),
+        element: <DisplayFile />,
       },
       {
         path: "/LogIn",

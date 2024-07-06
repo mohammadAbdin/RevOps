@@ -1,7 +1,6 @@
 import React, { createContext, ReactNode, useEffect, useState } from "react";
 import UserType from "../Types/UserType";
 import { determineSearchDataPropsType } from "../Types/determineSearchDataPropsType";
-// import { SearchDataType } from "../Types/SearchDataType";
 import ProjectType from "../Types/ProjectType";
 type UserContextType = {
   isLogedIn: boolean;
@@ -21,7 +20,7 @@ export const UserContext = createContext<UserContextType>({
   user: undefined,
   setUser: () => {},
   determineSearchData: () => {},
-  searchData: {} as Result, // Initialize searchData with an empty object
+  searchData: {} as Result,
 });
 interface UserContextProps {
   children: ReactNode;
@@ -54,7 +53,6 @@ export const UserProvider: React.FC<UserContextProps> = ({ children }) => {
         return { ...acc, ...obj };
       });
 
-    console.log(transformedData);
     setSearchData(transformedData);
   };
   useEffect(() => {
@@ -77,7 +75,3 @@ export const UserProvider: React.FC<UserContextProps> = ({ children }) => {
     <UserContext.Provider value={contextValue}>{children}</UserContext.Provider>
   );
 };
-// i have this type of data :
-// tags: ['ALU32Bit ALUControl ControlUnit Adder']
-// project_title: "Mips Pipeline Verilog Design"
-// _id: "6682fc06a62cb4ee4b9513f8"

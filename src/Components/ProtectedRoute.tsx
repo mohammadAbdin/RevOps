@@ -14,7 +14,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
   const { user } = useContext(UserContext);
 
   if (!user || (adminOnly && !user.isAdmin)) {
-    return <Navigate to="/LogIn" replace />; // toast: you cannot enter here you must be anAdmin
+    return <Navigate to="/LogIn" replace />;
   }
 
   return children;

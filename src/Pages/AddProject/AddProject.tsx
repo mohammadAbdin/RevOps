@@ -4,16 +4,17 @@ import useProjects from "../../Hooks/UseProjects";
 import { FaFileAlt, FaTags, FaAlignLeft } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import useGetTokens from "../../Hooks/UseGetTokens";
+import { showToastSuccessMessage } from "../../Components/Toast/Toasts";
+import { useNavigate } from "react-router-dom";
 
 const AddProject: React.FC = () => {
+  const navigate = useNavigate();
   const { setIsLogedIn, setUser, user } = useContext(UserContext);
   const { projectData, setProjectData, handleChange, handleSubmit } =
     useProjects(user);
   const { isLoading } = useGetTokens(setIsLogedIn, setUser);
-  console.log(user);
   useEffect(() => {
     if (!isLoading) {
-      console.log("User after fetch:", user);
       setProjectData((prev) => {
         return {
           ...prev,
@@ -44,7 +45,17 @@ const AddProject: React.FC = () => {
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos
           dolorem vel cupiditate laudantium dicta.
         </p>
-        <form onSubmit={handleSubmit}>
+        <form
+          onSubmit={(e) => {
+            showToastSuccessMessage(
+              "Your project has been successfully added."
+            );
+            handleSubmit(e);
+            setTimeout(() => {
+              navigate("/My-Projects");
+            }, 3000);
+          }}
+        >
           <div className="mt-8 space-y-6">
             <div>
               <label

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { showToastSuccessMessage } from "../Components/Toast/Toasts";
 
 const deleteProject = async (projectId: string) => {
   try {
@@ -6,7 +7,7 @@ const deleteProject = async (projectId: string) => {
       `http://localhost:5000/Project/delete-project/${projectId}`
     );
     if (response.status === 200) {
-      console.log("Project deleted successfully");
+      showToastSuccessMessage("Project deleted successfully");
     } else {
       alert("Failed to delete the project");
     }

@@ -15,8 +15,6 @@ const distructuringFeedBack = (
     if (matchedFeedback) {
       setAdminContent(matchedFeedback.adminContent);
       setFeedBackInput(matchedFeedback.feedBack);
-    } else {
-      console.log("No matching feedback found for fileName:", fileName);
     }
   }
 };

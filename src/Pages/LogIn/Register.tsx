@@ -1,6 +1,7 @@
 import React from "react";
 import useLogin from "../../Hooks/UseLogIn";
 import logo from "../../assets/images/logo.png";
+import { showToastSuccessMessage } from "../../Components/Toast/Toasts";
 
 const Register: React.FC = () => {
   const {
@@ -34,7 +35,10 @@ const Register: React.FC = () => {
               </h1>
               <form
                 className="space-y-4 md:space-y-6"
-                onSubmit={handleRegister}
+                onSubmit={(e) => {
+                  showToastSuccessMessage("You  regestered successfully");
+                  handleRegister(e);
+                }}
               >
                 {error && <div className="text-red-500">{error}</div>}
                 <div>

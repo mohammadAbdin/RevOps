@@ -4,12 +4,12 @@ import useGetFileContent from "../../../Hooks/UseGetFileContent";
 import useAdminReview from "../../../Hooks/UseAdminReview";
 import useGetTokens from "../../../Hooks/UseGetTokens";
 import Divider from "../../../Components/Divider";
-// import { FeedBackType } from "../../../Types/FeedBackType";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { highlightSyntax } from "../../../highlightSyntax/highlightSyntax";
 import extractFileNameFromUrl from "../../../Functions/extractFileNameFromUrl";
 import distructuringFeedBack from "../../../Functions/distructuringFeedBack";
 import deleteProject from "../../../API/deleteProjectRequest";
+import { showToastInfoMessage } from "../../../Components/Toast/Toasts";
 export type AdminContentType = (string | null)[];
 
 const ProjectsToDo: React.FC = () => {
@@ -88,7 +88,7 @@ const ProjectsToDo: React.FC = () => {
       {isAdmin ? (
         <div className="h-full bg-gray-900 mb-10 p-4 pl-10 pt-8 rounded-b-lg">
           <div className="h-full flex flex-col items-start text-white">
-            {fileContent.split("\n").map((line, index) => (
+            {fileContent?.split("\n").map((line, index) => (
               <input
                 key={index}
                 style={{
@@ -135,6 +135,9 @@ const ProjectsToDo: React.FC = () => {
             <button
               className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
               onClick={() => {
+                showToastInfoMessage(
+                  "Your edits have been successfully applied"
+                );
                 handleSubmitReview(url, adminContent, feedBackInput, projectId);
                 navigate(`/Projects-to-do/ReviewProject/${projectId}`);
               }}
@@ -146,7 +149,7 @@ const ProjectsToDo: React.FC = () => {
       ) : (
         <div className="h-full bg-gray-900 mb-10 p-4 pl-10 pt-8 rounded-lg">
           <div className="h-full flex flex-col items-start text-white">
-            {highlightSyntax(fileContent.split("\n"), adminContent)}
+            {highlightSyntax(fileContent?.split("\n"), adminContent)}
           </div>
           <div className="w-full flex flex-col p-8 mt-8 ">
             <label htmlFor="feedBack" className="text-gray-700 text-left ">

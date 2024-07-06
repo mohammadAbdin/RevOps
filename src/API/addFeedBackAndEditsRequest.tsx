@@ -17,7 +17,6 @@ export const addFeedBackAndEditsRequest = async (
       }
     );
 
-    console.log("Backend response:", response.data);
     return response.data;
   } catch (error) {
     console.error("Error adding feedback and edits:", error);

@@ -7,7 +7,7 @@ const SearchInput: React.FC = () => {
   const { searchData } = useContext(UserContext);
   const [query, setQuery] = useState("");
   const [filteredResults, setFilteredResults] = useState<string[]>([]);
-  const dropdownRef = useRef<HTMLDivElement>(null); // Ref for the dropdown container
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const input = event.target.value;
@@ -26,7 +26,7 @@ const SearchInput: React.FC = () => {
       dropdownRef.current &&
       !dropdownRef.current.contains(event.target as Node)
     ) {
-      setFilteredResults([]); // Close dropdown when clicking outside
+      setFilteredResults([]);
     }
   };
 
@@ -38,7 +38,7 @@ const SearchInput: React.FC = () => {
   }, []);
 
   return (
-    <div className="input-component relative mr-16 w-40 lg:w-64">
+    <div className="input-component relative mr-4 xl:mr-40 w-40 lg:w-80">
       <label htmlFor="Search" className="sr-only">
         Search
       </label>
@@ -47,7 +47,7 @@ const SearchInput: React.FC = () => {
         id="Search"
         placeholder="Search for..."
         value={query}
-        onChange={handleInputChange} // Handle input changes
+        onChange={handleInputChange}
         className="w-40 lg:w-full rounded-md border-gray-200 py-2.5 pr-10 shadow-sm sm:text-sm p-4 text-black bg-white"
       />
       <span className="absolute inset-y-0 right-0 grid w-10  lg:w-20 place-content-center">
@@ -77,13 +77,9 @@ const SearchInput: React.FC = () => {
           {filteredResults.map((key) => (
             <div
               key={key}
-              // navigate(
-              //   `/Projects-to-do/ReviewProject/${searchData[`${key}`]}`
-              // )
               onClick={() => {
                 if (searchData) {
                   if (searchData[`${key}`] == key) {
-                    console.log("it is a tag");
                     navigate(`/Projects/${searchData[`${key}`]}`);
                     window.location.reload();
                   } else {

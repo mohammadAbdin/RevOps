@@ -1,39 +1,22 @@
-interface UserProjectProps {
-  _id?: string;
-  commitIndex?: number;
-  date?: Date;
-  githubUri: string;
-  projectStatus: string;
-  userId?: string;
-  project_title: string;
-  description: string;
-  tags: string[];
-  isAdmin: boolean;
-  views?: number;
-}
+import { UserProjectProps } from "../../Types/UserProjectProps";
 import React from "react";
-
+import "react-toastify/dist/ReactToastify.css";
 import { Link, useNavigate } from "react-router-dom";
 import { FaCheck, FaTimes } from "react-icons/fa";
 import { updateTheProjectViewsRequest } from "../../API/incrementProjectViewsRequest";
 import { updateTheProjectStatusRequest } from "../../API/updateTheProjectStatusRequest";
 import { publishTheProjectRequest } from "../../API/publishTheProjectRequest";
 import deleteProject from "../../API/deleteProjectRequest";
+import { showToastSuccessMessage } from "../../Components/Toast/Toasts";
 const UserProject: React.FC<UserProjectProps> = ({
   _id,
-  commitIndex,
-  date,
-  githubUri,
   projectStatus,
-  userId,
   project_title,
   description,
   tags,
   isAdmin,
   views,
 }) => {
-  console.log(commitIndex, date, githubUri, projectStatus, userId);
-
   const navigate = useNavigate();
   const truncateDescription = (text: string, maxLength: number) => {
     if (text.length > maxLength) {
@@ -46,10 +29,10 @@ const UserProject: React.FC<UserProjectProps> = ({
     <div
       className="flex-col lg:flex-row flex p-4 border-b border-t-gray-200 rounded-t-md rounded-b-md mr-4 mb-4 hover:bg-gray-300 cursor-pointer"
       onClick={(e) => {
-        if (!isAdmin) updateTheProjectViewsRequest(_id);
+        if (!isAdmin && (e.target as HTMLInputElement).id !== "not")
+          updateTheProjectViewsRequest(_id);
         if ((e.target as HTMLInputElement).id !== "not")
           navigate(`/Projects-to-do/ReviewProject/${_id}`);
-        else console.log("hi");
       }}
     >
       {isAdmin ? (
@@ -61,11 +44,10 @@ const UserProject: React.FC<UserProjectProps> = ({
             if (
               window.confirm("Are you sure you want to delete the project?")
             ) {
-              // toaster
               if (_id !== undefined) deleteProject(_id);
               setTimeout(() => {
                 window.location.reload();
-              }, 500);
+              }, 2000);
             }
           }}
         />
@@ -75,7 +57,11 @@ const UserProject: React.FC<UserProjectProps> = ({
           <div className="flex items-center justify-center flex-row lg:flex-col gap-4 lg:gap-0">
             <div className="flex items-center justify-between lg:p-2 flex-row lg:flex-col">
               <div className="text-xl font-bold flex items-center justify-between">
-                <FaCheck className="text-green-600" aria-hidden="true" />
+                {projectStatus == "Completed" ? (
+                  <FaCheck className="text-green-600" aria-hidden="true" />
+                ) : (
+                  <FaTimes className="text-red-600" aria-hidden="true" />
+                )}
               </div>
               <div className="text-sm text-gray-600">answers</div>
             </div>
@@ -100,9 +86,13 @@ const UserProject: React.FC<UserProjectProps> = ({
             {tags.map((tag, index) => (
               <Link
                 id="not"
-                // tags/${tag}
                 to={`/Projects/${tag}`}
-                onClick={() => navigate(`/Projects/${tag}`)}
+                onClick={() => {
+                  navigate(`/Projects/${tag}`);
+                  setTimeout(() => {
+                    window.location.reload();
+                  }, 1000);
+                }}
                 key={index}
                 className="bg-gray-200 text-gray-800 text-sm font-medium px-2 py-1 rounded hover:bg-gray-300"
               >
@@ -116,7 +106,6 @@ const UserProject: React.FC<UserProjectProps> = ({
                 <button
                   className="rounded-md bg-teal-600 hover:bg-teal-800 px-5 py-2.5   text-sm font-medium text-white shadow"
                   onClick={() => {
-                    //make the project Review in progress
                     updateTheProjectStatusRequest(_id);
                     navigate(`/Projects-to-do/ReviewProject/${_id}`);
                   }}
@@ -130,9 +119,8 @@ const UserProject: React.FC<UserProjectProps> = ({
                   className=" rounded-md bg-teal-600 px-5 py-2.5 hover:bg-teal-800   text-sm font-medium text-white shadow"
                   onClick={(e) => {
                     e.preventDefault();
-                    //make the project Review in progress
+                    showToastSuccessMessage("you published the project");
                     publishTheProjectRequest(_id);
-                    // window.location.reload();
                     navigate(`/`);
                   }}
                 >

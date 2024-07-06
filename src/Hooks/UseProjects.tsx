@@ -22,6 +22,7 @@ const useProjects = (user: UserType | undefined) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     if (projectData.tagsName !== undefined) {
       const formattedTags = projectData.tagsName
         .split(",")
@@ -31,11 +32,7 @@ const useProjects = (user: UserType | undefined) => {
         ...projectData,
         tags: formattedTags,
       };
-      console.log(updatedProjectData);
-      const response: Promise<unknown> = await addProjectRequest(
-        updatedProjectData
-      );
-      console.log(response);
+      await addProjectRequest(updatedProjectData);
     }
   };
 
