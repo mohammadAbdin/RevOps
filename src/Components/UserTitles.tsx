@@ -38,7 +38,7 @@ const UserTitles: React.FC<Props> = ({ user }) => {
       <SearchInput />
       <li className="relative">
         <a
-          className="meduimL:block hidden transition cursor-pointer text-lg relative group"
+          className="transition fixed right-16 top-5 md:top-0 md:right-0 cursor-pointer text-lg  md:relative group"
           onClick={toggleNotifications}
         >
           <FaBell />
@@ -50,7 +50,7 @@ const UserTitles: React.FC<Props> = ({ user }) => {
         </a>
         {isNotificationsVisible && (
           <ul
-            className="absolute right-0 top-full mt-2 w-64 bg-white shadow-lg rounded-lg"
+            className="fixed right-16 top-10 md:absolute md:right-0 md:top-full mt-2 w-64 bg-white shadow-lg rounded-lg"
             ref={notificationsRef}
           >
             {user?.notification && user.notification.length > 0 ? (
