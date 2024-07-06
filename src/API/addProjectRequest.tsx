@@ -1,24 +1,31 @@
+import axios from "axios";
 import ProjectType from "../Types/ProjectType";
 
 export const addProjectRequest = async (projectData: ProjectType) => {
   try {
-    const response = await fetch(`http://localhost:5000/Project/add-project`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(projectData),
-      credentials: "include",
-    });
+    const response = await axios.post(
+      "http://localhost:5000/Project/add-project",
+      projectData,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      }
+    );
 
-    if (response.ok) {
-      const data = await response.json();
-      return data;
+    return response.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      if (error.response) {
+        console.error("Server Error:", error.response.data);
+      } else if (error.request) {
+        console.error("No Response:", error.request);
+      } else {
+        console.error("Error:", error.message);
+      }
     } else {
-      const errorData = await response.json();
-      console.log(errorData);
+      console.error("Unexpected Error:", error);
     }
-  } catch (error: unknown) {
-    console.error("Fetch Error:");
   }
 };

@@ -34,7 +34,7 @@ const UserProject: React.FC<UserProjectProps> = ({
 }) => {
   console.log(commitIndex, date, githubUri, projectStatus, userId);
 
-  const naviagte = useNavigate();
+  const navigate = useNavigate();
   const truncateDescription = (text: string, maxLength: number) => {
     if (text.length > maxLength) {
       return text.substr(0, maxLength) + " ...";
@@ -48,7 +48,8 @@ const UserProject: React.FC<UserProjectProps> = ({
       onClick={(e) => {
         if (!isAdmin) updateTheProjectViewsRequest(_id);
         if ((e.target as HTMLInputElement).id !== "not")
-          naviagte(`/Projects-to-do/ReviewProject/${_id}`);
+          navigate(`/Projects-to-do/ReviewProject/${_id}`);
+        else console.log("hi");
       }}
     >
       {isAdmin ? (
@@ -98,8 +99,10 @@ const UserProject: React.FC<UserProjectProps> = ({
           <div className="flex items-center flex-wrap space-x-2 mb-2">
             {tags.map((tag, index) => (
               <Link
+                id="not"
                 // tags/${tag}
-                to={`/`}
+                to={`/Projects/${tag}`}
+                onClick={() => navigate(`/Projects/${tag}`)}
                 key={index}
                 className="bg-gray-200 text-gray-800 text-sm font-medium px-2 py-1 rounded hover:bg-gray-300"
               >
@@ -115,7 +118,7 @@ const UserProject: React.FC<UserProjectProps> = ({
                   onClick={() => {
                     //make the project Review in progress
                     updateTheProjectStatusRequest(_id);
-                    naviagte(`/Projects-to-do/ReviewProject/${_id}`);
+                    navigate(`/Projects-to-do/ReviewProject/${_id}`);
                   }}
                 >
                   {projectStatus == "Review in progress"
@@ -130,7 +133,7 @@ const UserProject: React.FC<UserProjectProps> = ({
                     //make the project Review in progress
                     publishTheProjectRequest(_id);
                     // window.location.reload();
-                    naviagte(`/`);
+                    navigate(`/`);
                   }}
                 >
                   {projectStatus != "Completed"

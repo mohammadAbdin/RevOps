@@ -1,30 +1,43 @@
+import axios from "axios";
 import { GitHubProjectResponse } from "../Types/GithubProjectRequestReturnType";
 
 export const getGitHubProjectForReviewingRequest = async (
   projectId: string | undefined
 ): Promise<GitHubProjectResponse | null> => {
   try {
-    const response: Response = await fetch(
+    if (!projectId) {
+      console.error("Project ID is undefined.");
+      return null;
+    }
+
+    const response = await axios.get<GitHubProjectResponse>(
       `http://localhost:5000/Admin/gitHub/review/${projectId}`,
       {
-        method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
+        withCredentials: true, // Include if your server requires credentials
       }
     );
 
-    if (response.ok) {
-      const result: GitHubProjectResponse = await response.json();
-      console.log("result", result);
-
-      return result;
-    } else {
-      console.error("Failed to fetch projects:", response.status);
-      return null;
-    }
+    console.log("result", response.data);
+    return response.data;
   } catch (error) {
-    console.error("Error fetching projects:", error);
+    if (axios.isAxiosError(error)) {
+      if (error.response) {
+        console.error(
+          "Failed to fetch project for reviewing:",
+          error.response.status,
+          error.response.data
+        );
+      } else if (error.request) {
+        console.error("No response received:", error.request);
+      } else {
+        console.error("Error:", error.message);
+      }
+    } else {
+      console.error("Unexpected Error:", error);
+    }
     return null;
   }
 };
