@@ -96,7 +96,7 @@ const UserProject: React.FC<UserProjectProps> = ({
                   }, 1000);
                 }}
                 key={index}
-                className="bg-gray-200 text-gray-800 text-sm font-medium px-2 py-1 rounded hover:bg-gray-300"
+                className="bg-gray-200 mt-2 text-gray-800 text-sm font-medium px-2 py-1 rounded hover:bg-gray-300"
               >
                 {tag}
               </Link>
