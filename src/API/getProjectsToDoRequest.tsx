@@ -19,11 +19,9 @@ export const getProjectsToDoRequest = async (): Promise<
   } catch (error) {
     if (axios.isAxiosError(error)) {
       if (error.response) {
-        console.error(
-          "Failed to fetch projects:",
-          error.response.status,
-          error.response.data
-        );
+        console.error("Failed to fetch projects:", error.response.status);
+        if (error.response.data.message == "No projects to do found.")
+          return error.response.data.message;
       } else if (error.request) {
         console.error("No response received:", error.request);
       } else {

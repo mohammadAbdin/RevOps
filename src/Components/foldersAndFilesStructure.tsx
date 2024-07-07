@@ -13,9 +13,11 @@ const FoldersAndFilesStructure: React.FC<{
   staticData: Item[];
   projectId: string | undefined;
   project_title: string;
-  feedBack?: FeedBackType;
+  feedBack?: FeedBackType[];
 }> = ({ staticData, projectId, project_title, feedBack }) => {
   const randomNumber = Math.floor(Math.random() * 200) + 1;
+  const fileNames = feedBack?.map((item: FeedBackType) => item.fileName);
+  console.log(fileNames);
 
   return (
     <table className="min-w-full divide-y divide-gray-200 border border-gray-200 bg-white">
@@ -33,11 +35,24 @@ const FoldersAndFilesStructure: React.FC<{
       </thead>
       <tbody className="bg-white divide-y divide-gray-200">
         {staticData.map((item, index) => {
+          let isFile: string | undefined = "";
+          isFile = item.url.split("/").pop();
+
+          console.log(isFile);
+
+          console.log();
           const encodedUrl = encodeURIComponent(item.url);
           return (
-            <tr key={index} className="hover:bg-gray-50">
+            <tr
+              key={index}
+              className={` ${
+                fileNames?.includes(isFile ? isFile : "")
+                  ? "bg-yellow-200"
+                  : "hover:bg-gray-50"
+              }  `}
+            >
               <td
-                className="px-6 py-4 whitespace-nowrap flex items-center ml-10"
+                className={`px-6 py-4 whitespace-nowrap flex  items-center ml-10`}
                 colSpan={2}
               >
                 {item.type == "tree" ? (
@@ -84,7 +99,9 @@ const FoldersAndFilesStructure: React.FC<{
                     onClick={() => {
                       if (item.type === "tree") window.location.reload();
                     }}
-                    className="text-blue-600 hover:underline"
+                    className={`
+                      
+                        hover:underline`}
                     title={item.path}
                   >
                     <Link

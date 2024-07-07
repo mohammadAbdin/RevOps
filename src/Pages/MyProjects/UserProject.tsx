@@ -118,6 +118,8 @@ const UserProject: React.FC<UserProjectProps> = ({
                 >
                   {projectStatus == "Review in progress"
                     ? "Continue Reviewing"
+                    : projectStatus == "Completed"
+                    ? "Unpublish project"
                     : "Review the Code"}
                 </button>
                 <button

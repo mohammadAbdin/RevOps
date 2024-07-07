@@ -1,0 +1,202 @@
+Date : 2024-07-07 09:46:19
+Directory : c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps
+Total : 125 files,  16472 codes, 208 comments, 962 blanks, all 17642 lines
+
+Languages
++--------------------+------------+------------+------------+------------+------------+
+| language           | files      | code       | comment    | blank      | total      |
++--------------------+------------+------------+------------+------------+------------+
+| JSON               |          6 |      9,589 |          2 |          8 |      9,599 |
+| TypeScript JSX     |         72 |      3,465 |          1 |        342 |      3,808 |
+| JavaScript         |         38 |      1,719 |         13 |        141 |      1,873 |
+| CSS                |          2 |      1,623 |        191 |        440 |      2,254 |
+| Markdown           |          1 |         42 |          0 |         27 |         69 |
+| HTML               |          1 |         13 |          0 |          1 |         14 |
+| JSON with Comments |          1 |         11 |          0 |          1 |         12 |
+| TypeScript         |          2 |          8 |          1 |          2 |         11 |
+| XML                |          2 |          2 |          0 |          0 |          2 |
++--------------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                                    | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                                       |        125 |     16,472 |        208 |        962 |     17,642 |
+| . (Files)                                                                                                                               |         11 |      8,672 |         13 |         42 |      8,727 |
+| public                                                                                                                                  |          1 |          1 |          0 |          0 |          1 |
+| server                                                                                                                                  |         37 |      2,710 |          2 |        137 |      2,849 |
+| server (Files)                                                                                                                          |          2 |      2,078 |          0 |          2 |      2,080 |
+| server\src                                                                                                                              |         35 |        632 |          2 |        135 |        769 |
+| server\src (Files)                                                                                                                      |          1 |         40 |          0 |          8 |         48 |
+| server\src\config                                                                                                                       |          1 |          0 |          0 |          1 |          1 |
+| server\src\controllers                                                                                                                  |         18 |        340 |          1 |         70 |        411 |
+| server\src\controllers\admin                                                                                                            |          2 |         37 |          0 |          7 |         44 |
+| server\src\controllers\files                                                                                                            |          1 |         16 |          1 |          2 |         19 |
+| server\src\controllers\logIn                                                                                                            |          4 |        100 |          0 |         18 |        118 |
+| server\src\controllers\projects                                                                                                         |         11 |        187 |          0 |         43 |        230 |
+| server\src\logic                                                                                                                        |          6 |        106 |          1 |         23 |        130 |
+| server\src\models                                                                                                                       |          2 |         31 |          0 |          8 |         39 |
+| server\src\routes                                                                                                                       |          4 |         51 |          0 |         11 |         62 |
+| server\src\token                                                                                                                        |          2 |         26 |          0 |          6 |         32 |
+| server\src\utils                                                                                                                        |          1 |         38 |          0 |          8 |         46 |
+| src                                                                                                                                     |         76 |      5,089 |        193 |        783 |      6,065 |
+| src (Files)                                                                                                                             |          5 |      1,727 |        192 |        448 |      2,367 |
+| src\API                                                                                                                                 |         16 |        460 |          0 |         52 |        512 |
+| src\Components                                                                                                                          |         10 |        825 |          0 |         67 |        892 |
+| src\Components (Files)                                                                                                                  |          9 |        804 |          0 |         65 |        869 |
+| src\Components\Toast                                                                                                                    |          1 |         21 |          0 |          2 |         23 |
+| src\Context                                                                                                                             |          1 |         72 |          0 |          6 |         78 |
+| src\Functions                                                                                                                           |          2 |         26 |          0 |          3 |         29 |
+| src\Hooks                                                                                                                               |         12 |        492 |          0 |         79 |        571 |
+| src\Pages                                                                                                                               |         17 |      1,260 |          1 |        102 |      1,363 |
+| src\Pages\AddProject                                                                                                                    |          1 |        151 |          1 |          5 |        157 |
+| src\Pages\Admin                                                                                                                         |          9 |        519 |          0 |         56 |        575 |
+| src\Pages\Admin (Files)                                                                                                                 |          2 |        109 |          0 |         14 |        123 |
+| src\Pages\Admin\AdminHome                                                                                                               |          2 |         37 |          0 |          7 |         44 |
+| src\Pages\Admin\AllProjects                                                                                                             |          1 |         38 |          0 |          7 |         45 |
+| src\Pages\Admin\Components                                                                                                              |          2 |        134 |          0 |         11 |        145 |
+| src\Pages\Admin\ProjectsToDo                                                                                                            |          1 |         38 |          0 |          7 |         45 |
+| src\Pages\Admin\displayFile                                                                                                             |          1 |        163 |          0 |         10 |        173 |
+| src\Pages\Home                                                                                                                          |          1 |        122 |          0 |          6 |        128 |
+| src\Pages\LogIn                                                                                                                         |          2 |        198 |          0 |         11 |        209 |
+| src\Pages\MyProjects                                                                                                                    |          2 |        191 |          0 |          9 |        200 |
+| src\Pages\Projects                                                                                                                      |          1 |         39 |          0 |          7 |         46 |
+| src\Pages\SearchResults                                                                                                                 |          1 |         40 |          0 |          8 |         48 |
+| src\Types                                                                                                                               |          7 |         63 |          0 |          9 |         72 |
+| src\assets                                                                                                                              |          5 |         91 |          0 |          8 |         99 |
+| src\assets (Files)                                                                                                                      |          1 |          1 |          0 |          0 |          1 |
+| src\assets\images                                                                                                                       |          4 |         90 |          0 |          8 |         98 |
+| src\highlightSyntax                                                                                                                     |          1 |         73 |          0 |          9 |         82 |
++-----------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| filename                                                                                                                                | language           | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\.eslintrc.cjs                                                            | JavaScript         |         18 |          0 |          1 |         19 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\README.md                                                                | Markdown           |         42 |          0 |         27 |         69 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\index.html                                                               | HTML               |         13 |          0 |          1 |         14 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\package-lock.json                                                        | JSON               |      7,426 |          0 |          1 |      7,427 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\package.json                                                             | JSON               |         49 |          0 |          1 |         50 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\postcss.config.cjs                                                       | JavaScript         |          6 |          0 |          1 |          7 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\public\vite.svg                                                          | XML                |          1 |          0 |          0 |          1 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\package-lock.json                                                 | JSON               |      2,057 |          0 |          1 |      2,058 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\package.json                                                      | JSON               |         21 |          0 |          1 |         22 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\config\database.js                                            | JavaScript         |          0 |          0 |          1 |          1 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\controllers\admin\getGitHubProjectController.js               | JavaScript         |         22 |          0 |          4 |         26 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\controllers\admin\getGitHubProjectInternalFolderController.js | JavaScript         |         15 |          0 |          3 |         18 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\controllers\files\getFileContentController.js                 | JavaScript         |         16 |          1 |          2 |         19 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\controllers\logIn\addNotificationController.js                | JavaScript         |         22 |          0 |          6 |         28 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\controllers\logIn\logInController.js                          | JavaScript         |         34 |          0 |          5 |         39 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\controllers\logIn\logOutController.js                         | JavaScript         |          8 |          0 |          1 |          9 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\controllers\logIn\registerController.js                       | JavaScript         |         36 |          0 |          6 |         42 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\controllers\projects\addFeedBackAndEditsController.js         | JavaScript         |         24 |          0 |          6 |         30 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\controllers\projects\addProjectController.js                  | JavaScript         |         28 |          0 |          2 |         30 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\controllers\projects\deleteProjectById.js                     | JavaScript         |         13 |          0 |          3 |         16 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\controllers\projects\getAllProjectsController.js              | JavaScript         |         13 |          0 |          4 |         17 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\controllers\projects\getCompletedProjectsController.js        | JavaScript         |         13 |          0 |          3 |         16 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\controllers\projects\getProjectsByTagController.js            | JavaScript         |         11 |          0 |          3 |         14 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\controllers\projects\getProjectsByUserIdController.js         | JavaScript         |         16 |          0 |          3 |         19 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\controllers\projects\getProjectsToDoController.js             | JavaScript         |         15 |          0 |          4 |         19 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\controllers\projects\publishProjectController.js              | JavaScript         |         18 |          0 |          5 |         23 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\controllers\projects\updateProjectStatusController.js         | JavaScript         |         18 |          0 |          5 |         23 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\controllers\projects\updateProjectViewsController.js          | JavaScript         |         18 |          0 |          5 |         23 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\index.js                                                      | JavaScript         |         40 |          0 |          8 |         48 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\logic\getCommitIndex.js                                       | JavaScript         |         21 |          0 |          4 |         25 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\logic\getDecodedString.js                                     | JavaScript         |          5 |          0 |          2 |          7 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\logic\getFileContentRequest.js                                | JavaScript         |         20 |          1 |          4 |         25 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\logic\getGithubFolders&Files.js                               | JavaScript         |         32 |          0 |          5 |         37 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\logic\getGithubInsideFoldersAndFiles.js                       | JavaScript         |         16 |          0 |          2 |         18 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\logic\getGithubUrls.js                                        | JavaScript         |         12 |          0 |          6 |         18 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\models\projectModel.js                                        | JavaScript         |         21 |          0 |          4 |         25 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\models\userModel.js                                           | JavaScript         |         10 |          0 |          4 |         14 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\routes\adminRoutes.js                                         | JavaScript         |          7 |          0 |          3 |         10 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\routes\authRoutes.js                                          | JavaScript         |         14 |          0 |          2 |         16 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\routes\fileRoutes.js                                          | JavaScript         |          5 |          0 |          3 |          8 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\routes\projectsRoutes.js                                      | JavaScript         |         25 |          0 |          3 |         28 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\token\getUserAfterTokens.js                                   | JavaScript         |         10 |          0 |          2 |         12 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\token\protectedRoute.js                                       | JavaScript         |         16 |          0 |          4 |         20 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\server\src\utils\mongoUtil.js                                            | JavaScript         |         38 |          0 |          8 |         46 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\API\addFeedBackAndEditsRequest.tsx                                   | TypeScript JSX     |         23 |          0 |          2 |         25 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\API\addNotificationRequest.tsx                                       | TypeScript JSX     |         30 |          0 |          2 |         32 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\API\addProjectRequest.tsx                                            | TypeScript JSX     |         29 |          0 |          3 |         32 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\API\deleteProjectRequest.tsx                                         | TypeScript JSX     |         17 |          0 |          3 |         20 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\API\getAllProjectsRequest.tsx                                        | TypeScript JSX     |         35 |          0 |          3 |         38 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\API\getCompletedProjectsRequest.tsx                                  | TypeScript JSX     |         35 |          0 |          3 |         38 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\API\getFileContentRequest.tsx                                        | TypeScript JSX     |         39 |          0 |          5 |         44 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\API\getGitHubProjectForReviewingRequest.tsx                          | TypeScript JSX     |         39 |          0 |          4 |         43 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\API\getGitHubProjectInternalForReviewingRequest.tsx                  | TypeScript JSX     |         38 |          0 |          4 |         42 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\API\getProjectsByTagRequest.tsx                                      | TypeScript JSX     |         27 |          0 |          3 |         30 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\API\getProjectsToDoRequest.tsx                                       | TypeScript JSX     |         35 |          0 |          3 |         38 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\API\getUserProjectsRequest.tsx                                       | TypeScript JSX     |         37 |          0 |          4 |         41 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\API\incrementProjectViewsRequest.tsx                                 | TypeScript JSX     |         11 |          0 |          3 |         14 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\API\logInRequest.tsx                                                 | TypeScript JSX     |         41 |          0 |          4 |         45 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\API\publishTheProjectRequest.tsx                                     | TypeScript JSX     |         11 |          0 |          3 |         14 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\API\updateTheProjectStatusRequest.tsx                                | TypeScript JSX     |         13 |          0 |          3 |         16 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\App.css                                                              | CSS                |         87 |         13 |         24 |        124 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\App.tsx                                                              | TypeScript JSX     |         95 |          0 |          5 |        100 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Components\Divider.tsx                                               | TypeScript JSX     |         51 |          0 |          8 |         59 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Components\HamburgerMenu.tsx                                         | TypeScript JSX     |        167 |          0 |          6 |        173 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Components\NavBar.tsx                                                | TypeScript JSX     |         80 |          0 |          6 |         86 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Components\ProtectedRoute.tsx                                        | TypeScript JSX     |         18 |          0 |          6 |         24 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Components\SearchInput.tsx                                           | TypeScript JSX     |         96 |          0 |          8 |        104 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Components\SideBar.tsx                                               | TypeScript JSX     |         53 |          0 |          7 |         60 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Components\Toast\Toasts.tsx                                          | TypeScript JSX     |         21 |          0 |          2 |         23 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Components\UserSideBarSections.tsx                                   | TypeScript JSX     |        127 |          0 |          9 |        136 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Components\UserTitles.tsx                                            | TypeScript JSX     |         79 |          0 |         10 |         89 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Components\foldersAndFilesStructure.tsx                              | TypeScript JSX     |        133 |          0 |          5 |        138 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Context\UserContext.tsx                                              | TypeScript JSX     |         72 |          0 |          6 |         78 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Functions\distructuringFeedBack.tsx                                  | TypeScript JSX     |         21 |          0 |          2 |         23 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Functions\extractFileNameFromUrl.tsx                                 | TypeScript JSX     |          5 |          0 |          1 |          6 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Hooks\UseAdminReview.tsx                                             | TypeScript JSX     |         40 |          0 |          4 |         44 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Hooks\UseGetAllProjects.tsx                                          | TypeScript JSX     |         28 |          0 |          6 |         34 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Hooks\UseGetCompletedProjects.tsx                                    | TypeScript JSX     |         31 |          0 |          6 |         37 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Hooks\UseGetFileContent.tsx                                          | TypeScript JSX     |         30 |          0 |          6 |         36 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Hooks\UseGetMyProjects.tsx                                           | TypeScript JSX     |         29 |          0 |          6 |         35 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Hooks\UseGetProjectsByTag.tsx                                        | TypeScript JSX     |         30 |          0 |          6 |         36 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Hooks\UseGetProjectsToDo.tsx                                         | TypeScript JSX     |         28 |          0 |          6 |         34 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Hooks\UseGetTokens.tsx                                               | TypeScript JSX     |         57 |          0 |         11 |         68 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Hooks\UseLogIn.tsx                                                   | TypeScript JSX     |        114 |          0 |          9 |        123 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Hooks\UseProjects.tsx                                                | TypeScript JSX     |         39 |          0 |          9 |         48 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Hooks\UseReviewInternalProjectForAdmin.tsx                           | TypeScript JSX     |         36 |          0 |          5 |         41 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Hooks\UseReviewProjectsForAdmin.tsx                                  | TypeScript JSX     |         30 |          0 |          5 |         35 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Pages\AddProject\AddProject.tsx                                      | TypeScript JSX     |        151 |          1 |          5 |        157 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Pages\Admin\AdminHome\AdminTitles.tsx                                | TypeScript JSX     |         26 |          0 |          2 |         28 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Pages\Admin\AdminHome\Home.tsx                                       | TypeScript JSX     |         11 |          0 |          5 |         16 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Pages\Admin\AllProjects\AllProjects.tsx                              | TypeScript JSX     |         38 |          0 |          7 |         45 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Pages\Admin\Components\AdminSideBarSections.tsx                      | TypeScript JSX     |         48 |          0 |          4 |         52 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Pages\Admin\Components\Navbar.tsx                                    | TypeScript JSX     |         86 |          0 |          7 |         93 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Pages\Admin\ProjectsToDo\ProjectsToDo.tsx                            | TypeScript JSX     |         38 |          0 |          7 |         45 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Pages\Admin\ReviewProject.tsx                                        | TypeScript JSX     |         45 |          0 |          6 |         51 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Pages\Admin\ReviewProjectInternalFolders.tsx                         | TypeScript JSX     |         64 |          0 |          8 |         72 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Pages\Admin\displayFile\DisplayFile.tsx                              | TypeScript JSX     |        163 |          0 |         10 |        173 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Pages\Home\Home.tsx                                                  | TypeScript JSX     |        122 |          0 |          6 |        128 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Pages\LogIn\LogIn.tsx                                                | TypeScript JSX     |         83 |          0 |          5 |         88 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Pages\LogIn\Register.tsx                                             | TypeScript JSX     |        115 |          0 |          6 |        121 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Pages\MyProjects\MyProjects.tsx                                      | TypeScript JSX     |         38 |          0 |          6 |         44 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Pages\MyProjects\UserProject.tsx                                     | TypeScript JSX     |        153 |          0 |          3 |        156 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Pages\Projects\CompletedProjects.tsx                                 | TypeScript JSX     |         39 |          0 |          7 |         46 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Pages\SearchResults\SearchResults.tsx                                | TypeScript JSX     |         40 |          0 |          8 |         48 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Types\FeedBackType.tsx                                               | TypeScript JSX     |          6 |          0 |          1 |          7 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Types\GithubProjectRequestReturnType.tsx                             | TypeScript JSX     |         12 |          0 |          2 |         14 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Types\ProjectType.tsx                                                | TypeScript JSX     |         16 |          0 |          1 |         17 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Types\SearchDataType.tsx                                             | TypeScript JSX     |          3 |          0 |          1 |          4 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Types\UserProjectProps.tsx                                           | TypeScript JSX     |         13 |          0 |          1 |         14 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Types\UserType.tsx                                                   | TypeScript JSX     |          9 |          0 |          1 |         10 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\Types\determineSearchDataPropsType.tsx                               | TypeScript JSX     |          4 |          0 |          2 |          6 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\assets\images\checkIcon.tsx                                          | TypeScript JSX     |         21 |          0 |          2 |         23 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\assets\images\medal.tsx                                              | TypeScript JSX     |         22 |          0 |          2 |         24 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\assets\images\personWith3Stars.tsx                                   | TypeScript JSX     |         18 |          0 |          2 |         20 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\assets\images\saveTime.tsx                                           | TypeScript JSX     |         29 |          0 |          2 |         31 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\assets\react.svg                                                     | XML                |          1 |          0 |          0 |          1 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\highlightSyntax\highlightSyntax.tsx                                  | TypeScript JSX     |         73 |          0 |          9 |         82 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\index.css                                                            | CSS                |      1,536 |        178 |        416 |      2,130 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\main.tsx                                                             | TypeScript JSX     |          9 |          0 |          2 |         11 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\src\vite-env.d.ts                                                        | TypeScript         |          0 |          1 |          1 |          2 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\tailwind.config.js                                                       | JavaScript         |      1,063 |         11 |          4 |      1,078 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\tsconfig.app.json                                                        | JSON               |         23 |          2 |          3 |         28 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\tsconfig.json                                                            | JSON with Comments |         11 |          0 |          1 |         12 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\tsconfig.node.json                                                       | JSON               |         13 |          0 |          1 |         14 |
+| c:\Users\Mohammad\Desktop\Apple_Seeds_Tasks\Mid-Project\RevOps\vite.config.ts                                                           | TypeScript         |          8 |          0 |          1 |          9 |
+| Total                                                                                                                                   |                    |     16,472 |        208 |        962 |     17,642 |
++-----------------------------------------------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+

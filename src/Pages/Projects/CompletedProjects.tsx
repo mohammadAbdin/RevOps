@@ -4,6 +4,7 @@ import UserProject from "../MyProjects/UserProject";
 import useGetCompletedProjects from "../../Hooks/UseGetCompletedProjects";
 import useGetTokens from "../../Hooks/UseGetTokens";
 import Divider from "../../Components/Divider";
+import { mergeSortProjects } from "../../Functions/sortProjects";
 
 const CompletedProjects: React.FC = () => {
   const { setIsLogedIn, setUser, isAdmin, determineSearchData } =
@@ -29,13 +30,12 @@ const CompletedProjects: React.FC = () => {
     );
   }
 
-  console.log(completedProjects);
   return (
     <div className="flex-grow flex flex-col gap-0 home">
       <Divider text="" />
       <div className="mb-8 lg:mb-16"></div>
 
-      {completedProjects.map((project, index) => (
+      {mergeSortProjects(completedProjects).map((project, index) => (
         <UserProject key={index} {...project} isAdmin={isAdmin} />
       ))}
     </div>

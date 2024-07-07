@@ -10,7 +10,7 @@ export default interface ProjectType {
   commitIndex?: number;
   date?: Date;
   __v?: number;
-  feedBack?: FeedBackType;
+  feedBack?: FeedBackType[];
   tagsName?: string;
   views?: number;
 }
