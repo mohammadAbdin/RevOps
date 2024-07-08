@@ -16,6 +16,7 @@ export const getGithubFoldersAndFiles = async (githubUri, commitIndex) => {
         Authorization: `Bearer ${token}`,
       },
     });
+    //
     const commitsData = await commitsResponse.json();
     const commit = commitsData.length - commitIndex;
     const commitSha = commitsData[commit].sha;
