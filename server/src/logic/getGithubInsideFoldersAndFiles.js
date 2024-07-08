@@ -8,6 +8,7 @@ export const getGithubInsideFoldersAndFiles = async (url) => {
       },
     });
     const commitsData = await commitsResponse.json();
+    console.log(commitsData.tree);
 
     return commitsData.tree;
   } catch (error) {
