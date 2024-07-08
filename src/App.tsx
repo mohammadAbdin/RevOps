@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom"; //
 import Sidebar from "./Components/SideBar";
 import NavBar from "./Components/NavBar";
 import Home from "./Pages/Home/Home";
