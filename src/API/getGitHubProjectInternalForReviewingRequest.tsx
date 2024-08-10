@@ -9,7 +9,7 @@ export const getGitHubProjectInternalForReviewingRequest = async (
     const encodedUrl = encodeURIComponent(url ?? "");
 
     const response = await axios.get<GitHubProjectResponse>(
-      `http://localhost:5000/Admin/gitHub/folder/${encodedUrl}`,
+      `https://rev-ops-code-review-site.onrender.com/Admin/gitHub/folder/${encodedUrl}`,
       {
         headers: {
           "Content-Type": "application/json",
