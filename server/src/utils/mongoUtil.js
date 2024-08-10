@@ -14,16 +14,6 @@ const client = new MongoClient(uri, {
 
 let db;
 
-export async function connectToDatabase() {
-  try {
-    await client.connect();
-    console.log("Connected to MongoDB!");
-    db = client.db("users");
-  } catch (err) {
-    console.error("Error connecting to MongoDB:", err);
-  }
-}
-
 export async function closeDbConnection() {
   await client.close();
   console.log("MongoDB connection closed.");
@@ -43,3 +33,13 @@ export const connectDB = async () => {
 
 export const getDb = () => mongoose.connection.db;
 export { db };
+
+// export async function connectToDatabase() {
+//   try {
+//     await client.connect();
+//     console.log("Connected to MongoDB!");
+//     db = client.db("users");
+//   } catch (err) {
+//     console.error("Error connecting to MongoDB:", err);
+//   }
+// }

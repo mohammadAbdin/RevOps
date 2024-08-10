@@ -4,7 +4,7 @@ import ProjectType from "../Types/ProjectType";
 export const addProjectRequest = async (projectData: ProjectType) => {
   try {
     const response = await axios.post(
-      "https://rev-ops-code-review-site.onrender.com/Project/add-project",
+      "http://localhost:5000/Project/add-project",
       projectData,
       {
         headers: {

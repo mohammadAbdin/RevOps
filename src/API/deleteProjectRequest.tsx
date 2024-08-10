@@ -4,7 +4,7 @@ import { showToastSuccessMessage } from "../Components/Toast/Toasts";
 const deleteProject = async (projectId: string) => {
   try {
     const response = await axios.delete(
-      `https://rev-ops-code-review-site.onrender.com/Project/delete-project/${projectId}`
+      `http://localhost:5000/Project/delete-project/${projectId}`
     );
     if (response.status === 200) {
       showToastSuccessMessage("Project deleted successfully");

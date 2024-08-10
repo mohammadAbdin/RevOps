@@ -5,7 +5,7 @@ export const updateTheProjectStatusRequest = async (
 ) => {
   try {
     const response = await axios.put(
-      `https://rev-ops-code-review-site.onrender.com/Project/update-project-status/${_id}`
+      `http://localhost:5000/Project/update-project-status/${_id}`
     );
 
     return response.data;

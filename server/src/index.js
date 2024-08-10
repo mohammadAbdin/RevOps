@@ -5,7 +5,6 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
-
 import authRoutes from "./routes/authRoutes.js";
 import projectsRoutes from "./routes/projectsRoutes.js";
 import adimnRoutes from "./routes/adminRoutes.js";

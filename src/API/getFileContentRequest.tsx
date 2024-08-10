@@ -12,7 +12,7 @@ export const getFileContentRequest = async (
     const encodedUrl = encodeURIComponent(url);
 
     const response = await axios.get<{ content: string }>(
-      `https://rev-ops-code-review-site.onrender.com/file/content/${encodedUrl}`,
+      `http://localhost:5000/file/content/${encodedUrl}`,
       {
         headers: {
           "Content-Type": "application/json",

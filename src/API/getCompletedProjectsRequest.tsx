@@ -6,7 +6,7 @@ export const getCompletedProjectsRequest = async (): Promise<
 > => {
   try {
     const response = await axios.get<ProjectType[]>(
-      "https://rev-ops-code-review-site.onrender.com/Project/all-completed-Projects",
+      "http://localhost:5000/Project/all-completed-Projects",
       {
         headers: {
           "Content-Type": "application/json",

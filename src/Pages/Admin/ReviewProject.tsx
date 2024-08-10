@@ -33,6 +33,7 @@ const ReviewProject: React.FC = () => {
       </div>
     );
   }
+  console.log(gitHubProjectForReviewing);
 
   return (
     <div className="flex-grow flex flex-col gap-4 mt-8 mr-4 lg:mt-16 mb-8">

@@ -11,7 +11,7 @@ export const getGitHubProjectForReviewingRequest = async (
     }
 
     const response = await axios.get<GitHubProjectResponse>(
-      `https://rev-ops-code-review-site.onrender.com/Admin/gitHub/review/${projectId}`,
+      `http://localhost:5000/Admin/gitHub/review/${projectId}`,
       {
         headers: {
           "Content-Type": "application/json",

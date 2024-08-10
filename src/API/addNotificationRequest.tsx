@@ -6,7 +6,7 @@ export const addNotificationRequest = async (
 ) => {
   try {
     await axios.post(
-      "https://rev-ops-code-review-site.onrender.com/LogIn/add-notification",
+      "http://localhost:5000/LogIn/add-notification",
       { notification: notification, userId: userId },
       {
         headers: {
