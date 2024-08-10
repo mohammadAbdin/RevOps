@@ -9,7 +9,7 @@ export const getGithubFoldersAndFiles = async (githubUri, commitIndex) => {
   const commitsUrl = `https://api.github.com/repos/${owner}/${repo}/commits`;
 
   try {
-    const token = process.env.ACCOUNTS_TOKEN;
+    const token = "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";
     console.log(token);
 
     const commitsResponse = await fetch(commitsUrl, {

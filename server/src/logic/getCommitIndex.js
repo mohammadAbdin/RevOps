@@ -5,7 +5,7 @@ export const getCommitIndex = async (url) => {
   if (!match) {
     return;
   }
-  const token = process.env.ACCOUNTS_TOKEN;
+  const token = "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";
 
   const [, owner, repo] = match;
   console.log(match);
