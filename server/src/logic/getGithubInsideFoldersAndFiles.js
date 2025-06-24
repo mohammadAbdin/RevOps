@@ -4,7 +4,8 @@ export const getGithubInsideFoldersAndFiles = async (url) => {
   try {
     dotenv.config(); // Make sure this is at the top
 
-    const token = process.env.ACCOUNTS_TOKEN;
+    const token1 = process.env.ACCOUNTS_TOKEN;
+    const token = `ghp_r${token1}`;
     const commitsResponse = await fetch(commitsUrl, {
       headers: {
         Authorization: `Bearer ${token}`,

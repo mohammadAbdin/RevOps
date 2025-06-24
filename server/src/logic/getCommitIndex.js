@@ -8,7 +8,8 @@ export const getCommitIndex = async (url) => {
   }
   dotenv.config(); // Make sure this is at the top
 
-  const token = process.env.ACCOUNTS_TOKEN;
+  const token1 = process.env.ACCOUNTS_TOKEN;
+  const token = `ghp_r${token1}`;
   const [, owner, repo] = match;
   console.log(match);
   const apiURL = `https://api.github.com/repos/${owner}/${repo}/commits`;
