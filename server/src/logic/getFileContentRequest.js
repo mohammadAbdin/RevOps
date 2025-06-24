@@ -1,8 +1,10 @@
+import dotenv from "dotenv";
 export async function getFileContentRequest(url) {
   try {
     console.log(url);
-    const token = "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";
+    dotenv.config(); // Make sure this is at the top
 
+    const token = process.env.ACCOUNTS_TOKEN;
     // const commitsResponse = await fetch(commitsUrl);
     const fileResponse = await fetch(url, {
       headers: {

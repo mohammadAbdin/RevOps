@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config(); // Make sure this is at the top
+
 export const getGithubFoldersAndFiles = async (githubUri, commitIndex) => {
   const regex = /github\.com\/([^/]+)\/([^/]+)/;
   const match = githubUri.match(regex);

@@ -1,3 +1,4 @@
+import dotenv from "dotenv";
 export const getCommitIndex = async (url) => {
   const regex = /github\.com\/([^/]+)\/([^/]+)/;
   const match = url.match(regex);
@@ -5,8 +6,9 @@ export const getCommitIndex = async (url) => {
   if (!match) {
     return;
   }
-  const token = "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";
+  dotenv.config(); // Make sure this is at the top
 
+  const token = process.env.ACCOUNTS_TOKEN;
   const [, owner, repo] = match;
   console.log(match);
   const apiURL = `https://api.github.com/repos/${owner}/${repo}/commits`;
