@@ -28,12 +28,12 @@ const AppLayout = () => {
 
 const router = createBrowserRouter([
   {
+    // path: "/",
     path: "/",
     element: <AppLayout />,
     children: [
       {
         index: true,
-        path: "/",
         element: <Home />,
       },
       {
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
       {
         path: "/Projects-to-do",
         element: (
-          <ProtectedRoute adminOnly>
+          <ProtectedRoute>
             <ProjectsToDo />
           </ProtectedRoute>
         ),
@@ -63,7 +63,7 @@ const router = createBrowserRouter([
       {
         path: "/Projects",
         element: (
-          <ProtectedRoute adminOnly>
+          <ProtectedRoute>
             <AllProjects />
           </ProtectedRoute>
         ),

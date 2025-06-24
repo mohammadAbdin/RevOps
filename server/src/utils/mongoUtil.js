@@ -1,38 +1,64 @@
-import { MongoClient } from "mongodb";
+// import { MongoClient } from "mongodb";
+// import mongoose from "mongoose";
+// import dotenv from "dotenv";
+// dotenv.config();
+
+// const MONGO_URI = process.env.MONGO_URI;
+
+// const uri = MONGO_URI;
+
+// const client = new MongoClient(uri, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
+
+// let db;
+
+// export async function closeDbConnection() {
+//   await client.close();
+//   console.log("MongoDB connection closed.");
+// }
+// export const connectDB = async () => {
+//   try {
+
+//     await mongoose.connect(uri);
+//     // await mongoose.connect(uri, {
+//     //   useNewUrlParser: true,
+//     //   useUnifiedTopology: true,
+//     // });
+//     console.log("Connected to MongoDB");
+//   } catch (error) {
+//     console.error("MongoDB connection error:", error);
+//     process.exit(1);
+//   }
+// };
+
+// export const getDb = () => mongoose.connection.db;
+// export { db };
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+
 dotenv.config();
 
-const MONGO_URI = process.env.MONGO_URI;
+const uri = process.env.MONGO_URI;
 
-const uri = MONGO_URI;
-
-const client = new MongoClient(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-
-let db;
-
-export async function closeDbConnection() {
-  await client.close();
-  console.log("MongoDB connection closed.");
-}
 export const connectDB = async () => {
   try {
-    await mongoose.connect(uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    console.log("Connected to MongoDB");
+    await mongoose.connect(uri);
+    console.log("✅ Connected to MongoDB");
   } catch (error) {
-    console.error("MongoDB connection error:", error);
+    console.error("❌ MongoDB connection error:", error);
     process.exit(1);
   }
 };
 
+export function closeDbConnection() {
+  return mongoose.disconnect().then(() => {
+    console.log("✅ MongoDB connection closed.");
+  });
+}
+
 export const getDb = () => mongoose.connection.db;
-export { db };
 
 // export async function connectToDatabase() {
 //   try {

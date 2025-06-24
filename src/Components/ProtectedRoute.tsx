@@ -4,20 +4,14 @@ import { UserContext } from "../Context/UserContext";
 
 interface ProtectedRouteProps {
   children: JSX.Element;
-  adminOnly?: boolean;
 }
 
-const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
-  children,
-  adminOnly = false,
-}) => {
+const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
   const { user } = useContext(UserContext);
 
-  if (!user || (adminOnly && !user.isAdmin)) {
-    return <Navigate to="/LogIn" replace />;
-  }
+  const isAuthorized = user && user.isAdmin;
 
-  return children;
+  return isAuthorized ? children : <Navigate to="/LogIn" replace />;
 };
 
 export default ProtectedRoute;

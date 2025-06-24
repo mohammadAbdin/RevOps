@@ -11,7 +11,7 @@ const useProjects = (user: UserType | undefined) => {
     tags: [],
     tagsName: "",
     projectStatus: "pending",
-    _id: "" || user?._id || undefined,
+    _id: user?._id || undefined,
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

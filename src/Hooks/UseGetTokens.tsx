@@ -14,7 +14,6 @@ const fetchData = async (
 ): Promise<void> => {
   try {
     const token = Cookies.get("token");
-
     if (!token) {
       console.log("there is no token");
     } else {
